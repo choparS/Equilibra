@@ -14,6 +14,5 @@
 @property (strong, nonatomic) UIWindow *window;
 
 - (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
-- (void)showMessage:(NSString*)title :(NSString*)text;
 
 @end
