@@ -11,11 +11,7 @@
 
 @interface AccountViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIImageView *profilePicture;
-@property (strong, nonatomic) IBOutlet FBProfilePictureView *profilePictureFB;
-@property (strong, nonatomic) IBOutlet UILabel *username;
-
 - (IBAction)menuButtonTapped:(id)sender;
-- (IBAction)facebookButtonTapped:(id)sender;
+- (IBAction)LogoutButtonTapped:(id)sender;
 
 @end

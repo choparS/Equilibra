@@ -20,10 +20,6 @@
 
 @implementation AccountViewController
 
-@synthesize profilePicture = _profilePicture;
-@synthesize profilePictureFB = _profilePictureFB;
-@synthesize username = _username;
-
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -32,18 +28,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    UserData* data = [UserData getInstance];
-    
-    if (data.accountType == FACEBOOK) {
-        _profilePictureFB.profileID = data.profilePictureFB.profileID;
-        _profilePictureFB.hidden = FALSE;
-        _profilePictureFB.opaque = TRUE;
-        _username.text = [NSString stringWithFormat:@"%@ %@", data.firstName, data.lastName];
-    }
-    else {
-        
-    }
     
     if ([(NSObject *)self.slidingViewController.delegate isKindOfClass:[MEDynamicTransition class]]) {
         MEDynamicTransition *dynamicTransition = (MEDynamicTransition *)self.slidingViewController.delegate;
@@ -65,15 +49,17 @@
     [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }
 
-- (IBAction)facebookButtonTapped:(id)sender {
-    if (FBSession.activeSession.state == FBSessionStateOpen || FBSession.activeSession.state == FBSessionStateOpenTokenExtended)
-        [FBSession.activeSession closeAndClearTokenInformation];
-    else {
-        [FBSession openActiveSessionWithReadPermissions:@[@"basic_info", @"email", @"user_birthday"] allowLoginUI:YES
-                                      completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-                                          AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-                                          [appDelegate sessionStateChanged:session state:state error:error];
-                                      }];
+- (IBAction)LogoutButtonTapped:(id)sender {
+    if ([UserData getInstance].accountType == FACEBOOK) {
+        if (FBSession.activeSession.state == FBSessionStateOpen || FBSession.activeSession.state == FBSessionStateOpenTokenExtended)
+            [FBSession.activeSession closeAndClearTokenInformation];
+        else {
+            [FBSession openActiveSessionWithReadPermissions:@[@"basic_info", @"email", @"user_birthday"] allowLoginUI:YES
+                                        completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+                                            AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+                                            [appDelegate sessionStateChanged:session state:state error:error];
+                                        }];
+        }
     }
     [self performSegueWithIdentifier:@"toHome" sender:self];
 }

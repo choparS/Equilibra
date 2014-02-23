@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50A241318BA95A000C8A847 /* AccountFavoritesButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A240C18BA95A000C8A847 /* AccountFavoritesButton.png */; };
+		D50A241418BA95A000C8A847 /* AccountFollowsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A240D18BA95A000C8A847 /* AccountFollowsButton.png */; };
+		D50A241518BA95A000C8A847 /* AccountFriendsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A240E18BA95A000C8A847 /* AccountFriendsButton.png */; };
+		D50A241618BA95A000C8A847 /* AccountLogoutButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A240F18BA95A000C8A847 /* AccountLogoutButton.png */; };
+		D50A241718BA95A000C8A847 /* AccountMessagesButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A241018BA95A000C8A847 /* AccountMessagesButton.png */; };
+		D50A241818BA95A000C8A847 /* AccountPlanningsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A241118BA95A000C8A847 /* AccountPlanningsButton.png */; };
+		D50A241918BA95A000C8A847 /* AccountProfileButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A241218BA95A000C8A847 /* AccountProfileButton.png */; };
+		D50A241C18BA961900C8A847 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50A241B18BA961900C8A847 /* ProfileViewController.m */; };
 		D50DCFEF18B8E6570072B89E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50DCFEE18B8E6570072B89E /* FacebookSDK.framework */; };
 		D51C335818B68630009D69F1 /* Transitions.m in Sources */ = {isa = PBXBuildFile; fileRef = D51C335718B68630009D69F1 /* Transitions.m */; };
 		D5C3DBDC18B286DA00856ECD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C3DBDB18B286DA00856ECD /* Foundation.framework */; };
@@ -83,6 +91,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D50A240C18BA95A000C8A847 /* AccountFavoritesButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountFavoritesButton.png; sourceTree = "<group>"; };
+		D50A240D18BA95A000C8A847 /* AccountFollowsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountFollowsButton.png; sourceTree = "<group>"; };
+		D50A240E18BA95A000C8A847 /* AccountFriendsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountFriendsButton.png; sourceTree = "<group>"; };
+		D50A240F18BA95A000C8A847 /* AccountLogoutButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountLogoutButton.png; sourceTree = "<group>"; };
+		D50A241018BA95A000C8A847 /* AccountMessagesButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountMessagesButton.png; sourceTree = "<group>"; };
+		D50A241118BA95A000C8A847 /* AccountPlanningsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountPlanningsButton.png; sourceTree = "<group>"; };
+		D50A241218BA95A000C8A847 /* AccountProfileButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountProfileButton.png; sourceTree = "<group>"; };
+		D50A241A18BA961900C8A847 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		D50A241B18BA961900C8A847 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		D50DCFEE18B8E6570072B89E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		D51C335618B68630009D69F1 /* Transitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transitions.h; sourceTree = "<group>"; };
 		D51C335718B68630009D69F1 /* Transitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transitions.m; sourceTree = "<group>"; };
@@ -203,6 +220,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D50A240B18BA95A000C8A847 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				D50A240C18BA95A000C8A847 /* AccountFavoritesButton.png */,
+				D50A240D18BA95A000C8A847 /* AccountFollowsButton.png */,
+				D50A240E18BA95A000C8A847 /* AccountFriendsButton.png */,
+				D50A240F18BA95A000C8A847 /* AccountLogoutButton.png */,
+				D50A241018BA95A000C8A847 /* AccountMessagesButton.png */,
+				D50A241118BA95A000C8A847 /* AccountPlanningsButton.png */,
+				D50A241218BA95A000C8A847 /* AccountProfileButton.png */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		D5C3DBCF18B286DA00856ECD = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +350,7 @@
 		D5C3DC3D18B2AB8800856ECD /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				D50A240B18BA95A000C8A847 /* Account */,
 				D5C3DC3E18B2AB8800856ECD /* background.png */,
 				D5C3DC3F18B2AB8800856ECD /* Connection */,
 				D5C3DC4518B2AB8800856ECD /* Register */,
@@ -403,6 +435,8 @@
 				D5F9D93F18BA56600014D6A7 /* Register */,
 				D5F9D94818BA56600014D6A7 /* SettingsViewController.h */,
 				D5F9D94918BA56600014D6A7 /* SettingsViewController.m */,
+				D50A241A18BA961900C8A847 /* ProfileViewController.h */,
+				D50A241B18BA961900C8A847 /* ProfileViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -501,6 +535,7 @@
 				D5C3DC6718B2AB8800856ECD /* RegisterStep3.png in Resources */,
 				D5C3DBF218B286DA00856ECD /* Main_iPad.storyboard in Resources */,
 				D5C3DC6018B2AB8800856ECD /* RegisterRegisterButton.png in Resources */,
+				D50A241618BA95A000C8A847 /* AccountLogoutButton.png in Resources */,
 				D5C3DC5D18B2AB8800856ECD /* ConnectionTwitterButton.png in Resources */,
 				D5C3DC5818B2AB8800856ECD /* background.png in Resources */,
 				D5C3DC6818B2AB8800856ECD /* RegisterStep4.png in Resources */,
@@ -510,6 +545,7 @@
 				D5C3DC6918B2AB8800856ECD /* topBar.png in Resources */,
 				D5C3DC5E18B2AB8800856ECD /* RegisterNextButton.png in Resources */,
 				D5C3DC5A18B2AB8800856ECD /* ConnectionConnectButton.png in Resources */,
+				D50A241718BA95A000C8A847 /* AccountMessagesButton.png in Resources */,
 				D5C3DC6518B2AB8800856ECD /* RegisterStep1.png in Resources */,
 				D5C3DC6C18B2AB8800856ECD /* topBarLogoTitle.png in Resources */,
 				D5C3DBF718B286DA00856ECD /* Images.xcassets in Resources */,
@@ -517,12 +553,17 @@
 				D5C3DC5B18B2AB8800856ECD /* ConnectionFacebookButton.png in Resources */,
 				D5C3DC6E18B2AB8800856ECD /* topBarRefreshButton.png in Resources */,
 				D5C3DC6118B2AB8800856ECD /* RegisterState1.png in Resources */,
+				D50A241518BA95A000C8A847 /* AccountFriendsButton.png in Resources */,
 				D5C3DC6D18B2AB8800856ECD /* topBarMenuButton.png in Resources */,
+				D50A241418BA95A000C8A847 /* AccountFollowsButton.png in Resources */,
+				D50A241818BA95A000C8A847 /* AccountPlanningsButton.png in Resources */,
 				D5C3DC5C18B2AB8800856ECD /* ConnectionGoogleButton.png in Resources */,
 				D5C3DC6B18B2AB8800856ECD /* topBarLogo.png in Resources */,
 				D5C3DBE618B286DA00856ECD /* InfoPlist.strings in Resources */,
 				D5C3DC6218B2AB8800856ECD /* RegisterState2.png in Resources */,
+				D50A241918BA95A000C8A847 /* AccountProfileButton.png in Resources */,
 				D5C3DC6318B2AB8800856ECD /* RegisterState3.png in Resources */,
+				D50A241318BA95A000C8A847 /* AccountFavoritesButton.png in Resources */,
 				D5C3DC5918B2AB8800856ECD /* ConnectionBox.png in Resources */,
 				D5C3DC6A18B2AB8800856ECD /* topBarBackButton.png in Resources */,
 			);
@@ -561,6 +602,7 @@
 				D5F9D93318BA56520014D6A7 /* WebServices.m in Sources */,
 				D5F9D94D18BA56600014D6A7 /* InitialViewController.m in Sources */,
 				D5C3DC3718B2971500856ECD /* MEDynamicTransition.m in Sources */,
+				D50A241C18BA961900C8A847 /* ProfileViewController.m in Sources */,
 				D5F9D94B18BA56600014D6A7 /* ConnectionViewController.m in Sources */,
 				D5F9D94F18BA56600014D6A7 /* RegisterFourViewController.m in Sources */,
 				D5F9D92F18BA56520014D6A7 /* DataRegister.m in Sources */,

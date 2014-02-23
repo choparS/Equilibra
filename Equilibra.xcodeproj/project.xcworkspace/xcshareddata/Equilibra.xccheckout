@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>968F6BFA-9362-4161-BECA-23C2BB8608BF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Equilibra</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BEFEAA78-CF5B-4FC5-8CE7-E4996E83F394</key>
+		<string>https://github.com/choparS/Equilibra.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Equilibra.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BEFEAA78-CF5B-4FC5-8CE7-E4996E83F394</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/choparS/Equilibra.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BEFEAA78-CF5B-4FC5-8CE7-E4996E83F394</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BEFEAA78-CF5B-4FC5-8CE7-E4996E83F394</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Equilibra</string>
+		</dict>
+	</array>
+</dict>
+</plist>
