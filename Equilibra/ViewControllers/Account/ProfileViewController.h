@@ -14,4 +14,6 @@
 @property (strong, nonatomic) IBOutlet FBProfilePictureView *profilePictureFB;
 @property (strong, nonatomic) IBOutlet UILabel *username;
 
+- (IBAction)menuButtonTapped:(id)sender;
+
 @end

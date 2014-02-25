@@ -18,7 +18,7 @@
 @property (strong, nonatomic) IBOutlet UITextField* password;
 @property (strong, nonatomic) IBOutlet UITextField* confirmPassword;
 
--(IBAction)toConnection:(id)sender;
--(IBAction)checkInformation:(id)sender;
+- (IBAction)menuButtonTapped:(id)sender;
+- (IBAction)checkInformation:(id)sender;
 
 @end

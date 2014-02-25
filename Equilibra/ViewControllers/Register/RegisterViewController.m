@@ -15,6 +15,8 @@
 
 @interface RegisterViewController ()
 
+@property (nonatomic, strong) UIPanGestureRecognizer*   dynamicTransitionPanGesture;
+
 @end
 
 @implementation RegisterViewController
@@ -36,6 +38,23 @@
     [_email setText:_data.email];
     [_password setText:_data.password];
     [_confirmPassword setText:_data.password];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if ([(NSObject *)self.slidingViewController.delegate isKindOfClass:[MEDynamicTransition class]]) {
+        MEDynamicTransition *dynamicTransition = (MEDynamicTransition *)self.slidingViewController.delegate;
+        if (!self.dynamicTransitionPanGesture)
+            self.dynamicTransitionPanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:dynamicTransition action:@selector(handlePanGesture:)];
+        
+        [self.navigationController.view removeGestureRecognizer:self.slidingViewController.panGesture];
+        [self.navigationController.view addGestureRecognizer:self.dynamicTransitionPanGesture];
+    }
+    else {
+        [self.navigationController.view removeGestureRecognizer:self.dynamicTransitionPanGesture];
+        [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    }
 }
 
 #pragma mark - UITextFieldDelegate
@@ -75,8 +94,8 @@
         [self performSegueWithIdentifier:@"toConnection" sender:self];
 }
 
--(IBAction)toConnection:(id)sender {
-    [Dialog confirmDialog:@"Register" :@"Are you sure to cancel your registration?" :self];
+- (IBAction)menuButtonTapped:(id)sender {
+    [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }
 
 -(IBAction)checkInformation:(id)sender {
