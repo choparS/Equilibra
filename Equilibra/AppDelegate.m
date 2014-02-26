@@ -16,7 +16,9 @@
 
 @implementation AppDelegate
 
+// Fonction appelée lorsque l'application a fini de se charger
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Si la session facebook est encore active, on l'ouvre avec les permissions basiques
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
         [FBSession openActiveSessionWithReadPermissions:@[@"basic_info", @"email", @"user_birthday"] allowLoginUI:NO
                                       completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {[self sessionStateChanged:session state:state error:error];}];
@@ -24,6 +26,7 @@
     return YES;
 }
 
+// Fonction appelée lorsqu'on ouvre une URL dans l'application (comme le login facebook)
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
 }
@@ -40,6 +43,7 @@
 
 }
 
+// Fonction appelée lorsque l'application reprend la main
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [FBAppCall handleDidBecomeActive];
 }
@@ -49,6 +53,11 @@
 }
 
 - (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error {
+    /*
+     Si la session a été ouverte
+     On lance une requête à Facebook pour récupérer les données du compte
+     On stocke les données de l'utilisateur
+     */
     if (!error && state == FBSessionStateOpen) {
         NSLog(@"Session Facebook opened");
         UserData*   userData = [UserData getInstance];
@@ -76,6 +85,10 @@
         
         return;
     }
+    /*
+     Si la session a été fermé
+     On reset les données de l'utilisateur
+     */
     if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed) {
         NSLog(@"Session Facebook closed");
         UserData*   userData = [UserData getInstance];
@@ -91,6 +104,11 @@
         userData.gender = @"";
         userData.city = @"";
     }
+    /*
+     Si une erreur est survenue
+     On l'identifie et on la signale dans une boite de dialogue
+     Puis on ferme la session
+     */
     if (error) {
         NSLog(@"Error");
         NSString *alertText;

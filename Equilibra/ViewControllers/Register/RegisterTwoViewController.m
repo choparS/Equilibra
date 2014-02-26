@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // Récupération des données d'inscription
     [_firstName setText:_data.firstName];
     [_lastName setText:_data.lastName];
     [_dateOfBirth setText:_data.birthday];
@@ -46,8 +47,17 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Mise à jour et transfert des données d'inscription vers l'étape précèdente ou suivante
     if ([[segue identifier] isEqualToString:@"toRegister"]) {
-        RegisterViewController *registerOne = [segue destinationViewController];
+        UINavigationController* navigationController = [segue destinationViewController];
+        RegisterViewController *registerOne = (RegisterViewController*)navigationController.visibleViewController;
+        _data.firstName = _firstName.text;
+        _data.lastName = _lastName.text;
+        _data.birthday = _dateOfBirth.text;
+        _data.gender = _gender.selectedSegmentIndex;
+        _data.weight = _weight.text;
+        _data.height = _height.text;
+        _data.zipCode = _zipCode.text;
         registerOne.data = _data;
     }
     else if ([[segue identifier] isEqualToString:@"toRegisterThree"]) {
@@ -83,6 +93,7 @@
 - (IBAction)checkInformation:(id)sender {
     BOOL error = FALSE;
     
+    // Vérification des champs fourni par l'utilisateur
     if (![self checkFirstName:_firstName.text]) {
         _firstName.backgroundColor = [UIColor redColor];
         error = TRUE;
@@ -113,6 +124,7 @@
         error = TRUE;
     }
 
+    // Si il n'y a aucune erreur, on met à jour les données d'inscription puis on redirige l'utilisateur vers l'étape suivante
     if (!error) {
         _data.firstName = _firstName.text;
         _data.lastName = _lastName.text;

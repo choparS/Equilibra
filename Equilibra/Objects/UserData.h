@@ -58,6 +58,14 @@
 @property (strong, nonatomic) UIImage*              profilePicture;
 @property (strong, nonatomic) FBProfilePictureView* profilePictureFB;
 
+/*
+ Fonction qui permet de récupérer l'unique instance de la classe
+ 
+ Parametres:
+    Aucun
+ Retour:
+    L'instance de la classe
+ */
 +(UserData*)getInstance;
 
 @end

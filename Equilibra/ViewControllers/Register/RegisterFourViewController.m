@@ -24,10 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Récupération des données d'inscription
     [_newsletter setOn:_data.newsletter];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Mise à jour et transfert des données d'inscription vers l'étape précédente
     _data.newsletter = _newsletter.on;
     if ([[segue identifier] isEqualToString:@"toRegisterThree"]) {
         RegisterThreeViewController *registerThree = [segue destinationViewController];
@@ -59,8 +61,10 @@
  */
 
 - (IBAction)registerMe:(id)sender {
+    // Si les conditions d'utilisation ont été approuvé
     if (_termsOfUse.on) {
         WebServices *wbs = [[WebServices alloc] init];
+        // On crée le dictionnaire avec les données d'inscription
         NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
         
         [data setObject:[NSString stringWithFormat:@"%@", _data.pseudo] forKey:@"pseudo"];
@@ -76,10 +80,15 @@
         [data setObject:[NSString stringWithFormat:@"%@", _data.goal] forKey:@"goal"];
         [data setObject:[NSString stringWithFormat:@"%@", _newsletter.on ? @"true" : @"false"] forKey:@"newsletter"];
         
+        // On envoie les données au webservice d'inscription, puis on récupère la réponse du serveur
         NSDictionary *answer = [wbs WBSRegister:data];
         NSLog(@"%@", answer);
-
-    } else {
+        /////////////////////////////////////////////
+        // A FAIRE !!! Le traitement de la réponse //
+        /////////////////////////////////////////////
+    }
+    // Sinon, on affiche un dialogue
+    else {
         NSLog(@"Les conditions d'utilisation n'ont pas été lu et approuvé");
     }
     

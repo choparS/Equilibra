@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "WebServices.h"
 #import "Dialog.h"
+#import "UserData.h"
 
 @interface ConnectionViewController ()
 
@@ -34,6 +35,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    // Initialisation de la transition et du contrôle gestuel permettant d'ouvrir le menu en glissant le doigt de gauche à droite
     if ([(NSObject *)self.slidingViewController.delegate isKindOfClass:[MEDynamicTransition class]]) {
         MEDynamicTransition *dynamicTransition = (MEDynamicTransition *)self.slidingViewController.delegate;
         if (!self.dynamicTransitionPanGesture)
@@ -55,6 +57,14 @@
     return YES;
 }
 
+- (BOOL)checkUsername :(NSString*)username {
+    return TRUE;
+}
+
+- (BOOL)checkPassword :(NSString*)password {
+    return TRUE;
+}
+
 #pragma mark - IBActions
 
 - (IBAction)menuButtonTapped:(id)sender {
@@ -62,18 +72,36 @@
 }
 
 - (IBAction)connectButtonTapped:(id)sender {
-    WebServices *wbs = [[WebServices alloc] init];
-    BOOL connected = [wbs WBSConnection:_username.text.lowercaseString withPassWord:_password.text];
+    // Si l'username et le password est valide
+    if ([self checkUsername:_username.text.lowercaseString] && [self checkPassword:_password.text.lowercaseString]) {
+        // On lance le webservice de connexion et on récupère la réponse du serveur
+        WebServices *wbs = [[WebServices alloc] init];
+        BOOL connected = [wbs WBSConnection:_username.text.lowercaseString withPassWord:_password.text];
     
-    if (connected)
-        [Dialog informDialog:@"Connection" :@"You are connected!" :nil];
-    else
-        [Dialog informDialog:@"Connection" :@"Bad credentials..." :nil];
+        // Si la connexion a reussi
+        if (connected) {
+            // On stocke les informations de l'utilisateur
+            UserData*   userData = [UserData getInstance];
+            
+            userData.connected = TRUE;
+            userData.accountType = EQUILIBRA;
+            userData.username = _username.text;
+            // On affiche un dialogue
+            [Dialog informDialog:@"Connection" :[NSString stringWithFormat:@"You are connected as %@!", userData.username] :nil];
+            // On redirige l'utilisateur sur la page d'accueil
+            [self performSegueWithIdentifier:@"toHome" sender:self];
+        }
+        // Si la connexion a échouée, on affiche un dialogue
+        else
+            [Dialog informDialog:@"Connection" :@"Bad credentials..." :nil];
+    }
 }
 
 - (IBAction)facebookButtonTapped:(id)sender {
+    // Si la session Facebook est déja ouverte, on l'a ferme
     if (FBSession.activeSession.state == FBSessionStateOpen || FBSession.activeSession.state == FBSessionStateOpenTokenExtended)
         [FBSession.activeSession closeAndClearTokenInformation];
+    // Sinon on en ouvre une avec les permissions basiques
     else {
         [FBSession openActiveSessionWithReadPermissions:@[@"basic_info", @"email", @"user_birthday"] allowLoginUI:YES
                                       completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
@@ -81,6 +109,7 @@
              [appDelegate sessionStateChanged:session state:state error:error];
          }];
     }
+    // Puis on redirige l'utilisateur sur la page d'accueil
     [self performSegueWithIdentifier:@"toHome" sender:self];
 }
 

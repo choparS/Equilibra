@@ -35,7 +35,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    // On met à jour les données du menu
     [self.tableView reloadData];
+    // On déselectionne la cellule précédemment sélectionnée
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:false];
 }
 
@@ -47,6 +49,7 @@
 #pragma mark - Properties
 
 - (NSMutableArray *)menuItemsMember {
+    // Création des menus pour un utilisateur membre
     if (_menuItemsMember)
         return _menuItemsMember;
     _menuItemsMember = [[NSMutableArray alloc] init];
@@ -81,6 +84,7 @@
 }
 
 - (NSMutableArray *)menuItemsGuest {
+    // Création des meus pour un utilisateur invité
     if (_menuItemsGuest)
         return _menuItemsGuest;
     _menuItemsGuest = [[NSMutableArray alloc] init];
@@ -110,6 +114,7 @@
 
 #pragma mark - UITableViewDataSource
 
+// Fonction qui permet de récupérer un item depuis son index
 - (MenuItem*)getItemFromIndex: (NSInteger)index {
     NSMutableArray* menuItems = ([UserData getInstance].connected) ? self.menuItemsMember : self.menuItemsGuest;
     int i = menuItems.count;
@@ -147,6 +152,7 @@
     return c;
 }
 
+// Fonction appelée lorsque l'on clique sur la flèche pour montrer ou cacher les sous-menus
 - (IBAction)showSubMenu:(id)sender {
     NSMutableArray* menuItems = ([UserData getInstance].connected) ? self.menuItemsMember : self.menuItemsGuest;
     ArrowButton*    button = (ArrowButton*)sender;
@@ -160,6 +166,7 @@
     [self viewWillAppear:FALSE];
 }
 
+// Fonction appelé lorsque la UITableView se charge, elle permet d'initialiser les cellules
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSMutableArray* menuItems = ([UserData getInstance].connected) ? self.menuItemsMember : self.menuItemsGuest;
     MenuItem*       menu = [self getItemFromIndex:indexPath.row];
@@ -205,11 +212,13 @@
 
 #pragma mark - UITableViewDelegate
 
+// Fonction appelée lorsque l'utilisateur selectionne une cellule
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MenuItem*       menu = [self getItemFromIndex:indexPath.row];
 
     self.slidingViewController.topViewController.view.layer.transform = CATransform3DMakeScale(1, 1, 1);
     
+    // On redirige l'utilisateur selon la cellule selectionnée
     if ([menu.title isEqualToString:@"Home"])
         self.slidingViewController.topViewController = self.homeNavigationController;
     else if ([menu.title isEqualToString:@"Connection"])

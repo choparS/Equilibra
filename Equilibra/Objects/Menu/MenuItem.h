@@ -34,6 +34,20 @@
 @property BOOL                                  isOpen;
 @property (strong, nonatomic) NSMutableArray*   submenu;
 
+
+/*
+ Fonction qui permet d'initialiser les données de la classe
+ 
+ Parametres:
+    - cellType : le type du menu (MENU, GROUP_MENU ou SUBMENU)
+    - title : le titre du menu
+    - iconName : le nom de l'icone représentant le menu
+    - iconType : l'extension de l'icone représentant le menu
+    - indexParent : l'index du menu parent (dans le cas d'un SUBMENU) sinon -1
+    - submenu : un tableau contenant les sous-menu (dans le cas d'un GROUP_MENU) sinon nil
+ Retour:
+    L'instance créée et initialisée
+ */
 +(MenuItem*)initialize:(enum CellType)cellType :(NSString*)title :(NSString*)iconName :(NSString*)iconType :(NSInteger)indexParent :(NSMutableArray*)submenu;
 
 @end

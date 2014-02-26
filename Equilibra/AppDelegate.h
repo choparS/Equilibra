@@ -13,6 +13,16 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+/* 
+ Fonction qui permet d'interagir en fonction de l'etat de la session facebook
+ 
+ Parametres:
+    - session : la session Facebook
+    - state : l'etat de la session
+    - error : l'erreur si une erreur a été levée
+ Retour:
+    Aucun
+ */
 - (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
 
 @end

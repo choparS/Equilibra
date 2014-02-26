@@ -19,6 +19,14 @@
 @property (nonatomic, strong) Transitions*  transitions;
 @property NSInteger*                        transitionsIndex;
 
+/*
+ Fonction qui permet de récupérer l'unique instance de la classe
+ 
+ Parametres:
+    Aucun
+ Retour:
+    L'instance de la classe
+ */
 +(Settings*)getInstance;
 
 @end

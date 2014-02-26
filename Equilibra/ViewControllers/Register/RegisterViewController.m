@@ -31,9 +31,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Creation des données d'inscription
     if (!_data)
         _data = [DataRegister initialize];
     
+    // Récupération des données d'inscription
     [_pseudo setText:_data.pseudo];
     [_email setText:_data.email];
     [_password setText:_data.password];
@@ -43,6 +45,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    // Initialisation de la transition et du contrôle gestuel permettant d'ouvrir le menu en glissant le doigt de gauche à droite
     if ([(NSObject *)self.slidingViewController.delegate isKindOfClass:[MEDynamicTransition class]]) {
         MEDynamicTransition *dynamicTransition = (MEDynamicTransition *)self.slidingViewController.delegate;
         if (!self.dynamicTransitionPanGesture)
@@ -65,6 +68,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Transfert des données d'inscription à l'étape suivante
     if ([[segue identifier] isEqualToString:@"toRegisterTwo"]) {
         RegisterTwoViewController *registerTwo = [segue destinationViewController];
         registerTwo.data = _data;
@@ -89,11 +93,6 @@
     return TRUE;
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0)
-        [self performSegueWithIdentifier:@"toConnection" sender:self];
-}
-
 - (IBAction)menuButtonTapped:(id)sender {
     [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }
@@ -101,6 +100,7 @@
 -(IBAction)checkInformation:(id)sender {
     BOOL error = FALSE;
     
+    // Vérification des champs fourni par l'utilisateur
     if (![self checkPseudo:_pseudo.text]) {
         _pseudo.backgroundColor = [UIColor redColor];
         error = TRUE;
@@ -121,6 +121,7 @@
         error = TRUE;
     }
     
+    // Si il n'y a aucune erreur, on met à jour les données d'inscription puis on redirige l'utilisateur vers l'étape suivante
     if (!error) {
         _data.pseudo = _pseudo.text;
         _data.email = _email.text;

@@ -38,6 +38,14 @@
 @property (strong, nonatomic) NSString* goal;
 @property BOOL                          newsletter;
 
+/*
+ Fonction qui permet d'initialiser les données de la classe
+ 
+ Parametres:
+    Aucun
+ Retour:
+    L'instance créée et initialisée
+ */
 +(DataRegister*)initialize;
 
 @end

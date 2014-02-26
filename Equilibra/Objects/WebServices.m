@@ -11,22 +11,22 @@
 @implementation WebServices
 
 - (BOOL)WBSConnection:(NSString *)username withPassWord:(NSString *)password {
-    // Creation de la requete a envoye au serveur
+    // Creation de la requete a envoyer au serveur
     NSString *post = [NSString stringWithFormat:@"username_email=%@&password=%@", username, password];
     // Formatage de l'url de destination de la requete
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/login", @"equilibra2015", @"equilibrawebsite2015"]];
     // Execute la requete http et retourne les données JSON
     NSDictionary *answer = [self httpRequest:post withUrl:url];
     
-    // Si la connexion est reussi renvoie True, sinon False
     return [answer[@"connexion"] boolValue];
 }
 
 - (BOOL)WBSRegisterVerification:(NSString *)type :(NSString*)data {
+    // Creation de la requete a envoyer au serveur
     NSString *post = [NSString stringWithFormat:@"type=%@&%@=%@", type, type, data];
-    
+    // Formatage de l'url de destination de la requete
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/register-verification", @"equilibra2015", @"equilibrawebsite2015"]];
-    
+    // Execute la requete http et retourne les données JSON
     NSDictionary *answer = [self httpRequest:post withUrl:url];
 
     return [answer[@"verification"] boolValue];

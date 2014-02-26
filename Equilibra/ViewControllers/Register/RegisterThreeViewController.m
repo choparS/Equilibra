@@ -24,12 +24,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Création des données de la liste d'objectifs
     _goals = @[@"Goal #1",
               @"Goal #2",
               @"Goal #3",
               @"Goal #4",
               @"Goal #5"];
     
+    // On sélectionne la celulle via les données d'inscription
     [_goalList selectRow:[self getIndexFromTitle:_data.goal] inComponent:0 animated:TRUE];
 }
 
@@ -60,7 +62,8 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    _data.goal =  _goals[[_goalList selectedRowInComponent:0]];
+    // Mise à jour et transfert des données d'inscription vers l'étape précédente ou suivante
+    _data.goal = _goals[[_goalList selectedRowInComponent:0]];
     if ([[segue identifier] isEqualToString:@"toRegisterTwo"]) {
         RegisterTwoViewController *registerTwo = [segue destinationViewController];
         registerTwo.data = _data;
