@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7023A3FC18BE5907001FE527 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7023A3FB18BE5907001FE527 /* FacebookSDK.framework */; };
+		7081E5E618BE6145003D9507 /* Equilibra_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 7081E5DD18BE6145003D9507 /* Equilibra_120x120.png */; };
+		7081E5E718BE6145003D9507 /* Equilibra_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 7081E5DE18BE6145003D9507 /* Equilibra_128x128.png */; };
+		7081E5E818BE6145003D9507 /* Equilibra_152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 7081E5DF18BE6145003D9507 /* Equilibra_152x152.png */; };
+		7081E5E918BE6145003D9507 /* Equilibra_16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 7081E5E018BE6145003D9507 /* Equilibra_16x16.png */; };
+		7081E5EA18BE6145003D9507 /* Equilibra_58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 7081E5E118BE6145003D9507 /* Equilibra_58x58.png */; };
+		7081E5EB18BE6145003D9507 /* Equilibra_75x75.png in Resources */ = {isa = PBXBuildFile; fileRef = 7081E5E218BE6145003D9507 /* Equilibra_75x75.png */; };
+		7081E5EC18BE6145003D9507 /* Equilibra_76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 7081E5E318BE6145003D9507 /* Equilibra_76x76.png */; };
+		7081E5ED18BE6145003D9507 /* Equilibra_80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 7081E5E418BE6145003D9507 /* Equilibra_80x80.png */; };
+		7081E5EE18BE6145003D9507 /* Equilibra_LogoOrigin.png in Resources */ = {isa = PBXBuildFile; fileRef = 7081E5E518BE6145003D9507 /* Equilibra_LogoOrigin.png */; };
 		D50A241318BA95A000C8A847 /* AccountFavoritesButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A240C18BA95A000C8A847 /* AccountFavoritesButton.png */; };
 		D50A241418BA95A000C8A847 /* AccountFollowsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A240D18BA95A000C8A847 /* AccountFollowsButton.png */; };
 		D50A241518BA95A000C8A847 /* AccountFriendsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A240E18BA95A000C8A847 /* AccountFriendsButton.png */; };
@@ -14,7 +24,6 @@
 		D50A241718BA95A000C8A847 /* AccountMessagesButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A241018BA95A000C8A847 /* AccountMessagesButton.png */; };
 		D50A241818BA95A000C8A847 /* AccountPlanningsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A241118BA95A000C8A847 /* AccountPlanningsButton.png */; };
 		D50A241918BA95A000C8A847 /* AccountProfileButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A241218BA95A000C8A847 /* AccountProfileButton.png */; };
-		D50DCFEF18B8E6570072B89E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50DCFEE18B8E6570072B89E /* FacebookSDK.framework */; };
 		D51697DE18BD645E00356C79 /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51697DD18BD645E00356C79 /* ArticleViewController.m */; };
 		D51697E118BD64D600356C79 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51697E018BD64D600356C79 /* RecipeViewController.m */; };
 		D51697E418BD653A00356C79 /* ToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51697E318BD653A00356C79 /* ToolsViewController.m */; };
@@ -125,6 +134,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7023A3FB18BE5907001FE527 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		7081E5DD18BE6145003D9507 /* Equilibra_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equilibra_120x120.png; sourceTree = "<group>"; };
+		7081E5DE18BE6145003D9507 /* Equilibra_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equilibra_128x128.png; sourceTree = "<group>"; };
+		7081E5DF18BE6145003D9507 /* Equilibra_152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equilibra_152x152.png; sourceTree = "<group>"; };
+		7081E5E018BE6145003D9507 /* Equilibra_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equilibra_16x16.png; sourceTree = "<group>"; };
+		7081E5E118BE6145003D9507 /* Equilibra_58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equilibra_58x58.png; sourceTree = "<group>"; };
+		7081E5E218BE6145003D9507 /* Equilibra_75x75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equilibra_75x75.png; sourceTree = "<group>"; };
+		7081E5E318BE6145003D9507 /* Equilibra_76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equilibra_76x76.png; sourceTree = "<group>"; };
+		7081E5E418BE6145003D9507 /* Equilibra_80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equilibra_80x80.png; sourceTree = "<group>"; };
+		7081E5E518BE6145003D9507 /* Equilibra_LogoOrigin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Equilibra_LogoOrigin.png; sourceTree = "<group>"; };
 		D50A240C18BA95A000C8A847 /* AccountFavoritesButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountFavoritesButton.png; sourceTree = "<group>"; };
 		D50A240D18BA95A000C8A847 /* AccountFollowsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountFollowsButton.png; sourceTree = "<group>"; };
 		D50A240E18BA95A000C8A847 /* AccountFriendsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountFriendsButton.png; sourceTree = "<group>"; };
@@ -132,7 +151,6 @@
 		D50A241018BA95A000C8A847 /* AccountMessagesButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountMessagesButton.png; sourceTree = "<group>"; };
 		D50A241118BA95A000C8A847 /* AccountPlanningsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountPlanningsButton.png; sourceTree = "<group>"; };
 		D50A241218BA95A000C8A847 /* AccountProfileButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountProfileButton.png; sourceTree = "<group>"; };
-		D50DCFEE18B8E6570072B89E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		D51697DC18BD645E00356C79 /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
 		D51697DD18BD645E00356C79 /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 		D51697DF18BD64D600356C79 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
@@ -283,7 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5C3DBDE18B286DA00856ECD /* CoreGraphics.framework in Frameworks */,
-				D50DCFEF18B8E6570072B89E /* FacebookSDK.framework in Frameworks */,
+				7023A3FC18BE5907001FE527 /* FacebookSDK.framework in Frameworks */,
 				D5C3DBE018B286DA00856ECD /* UIKit.framework in Frameworks */,
 				D5C3DBDC18B286DA00856ECD /* Foundation.framework in Frameworks */,
 			);
@@ -302,6 +320,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7081E5DC18BE6145003D9507 /* Logos */ = {
+			isa = PBXGroup;
+			children = (
+				7081E5DD18BE6145003D9507 /* Equilibra_120x120.png */,
+				7081E5DE18BE6145003D9507 /* Equilibra_128x128.png */,
+				7081E5DF18BE6145003D9507 /* Equilibra_152x152.png */,
+				7081E5E018BE6145003D9507 /* Equilibra_16x16.png */,
+				7081E5E118BE6145003D9507 /* Equilibra_58x58.png */,
+				7081E5E218BE6145003D9507 /* Equilibra_75x75.png */,
+				7081E5E318BE6145003D9507 /* Equilibra_76x76.png */,
+				7081E5E418BE6145003D9507 /* Equilibra_80x80.png */,
+				7081E5E518BE6145003D9507 /* Equilibra_LogoOrigin.png */,
+			);
+			path = Logos;
+			sourceTree = "<group>";
+		};
 		D50A240B18BA95A000C8A847 /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,7 +441,7 @@
 		D5C3DBDA18B286DA00856ECD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D50DCFEE18B8E6570072B89E /* FacebookSDK.framework */,
+				7023A3FB18BE5907001FE527 /* FacebookSDK.framework */,
 				D5C3DBDB18B286DA00856ECD /* Foundation.framework */,
 				D5C3DBDD18B286DA00856ECD /* CoreGraphics.framework */,
 				D5C3DBDF18B286DA00856ECD /* UIKit.framework */,
@@ -501,6 +535,7 @@
 		D5C3DC3D18B2AB8800856ECD /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				7081E5DC18BE6145003D9507 /* Logos */,
 				D519DE3818BD1A5D005C47BE /* Menu */,
 				D50A240B18BA95A000C8A847 /* Account */,
 				D5C3DC3E18B2AB8800856ECD /* background.png */,
@@ -669,6 +704,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = D5C3DBCF18B286DA00856ECD;
 			productRefGroup = D5C3DBD918B286DA00856ECD /* Products */;
@@ -686,6 +722,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7081E5EA18BE6145003D9507 /* Equilibra_58x58.png in Resources */,
 				D5C3DBF218B286DA00856ECD /* Main_iPad.storyboard in Resources */,
 				D5C3DC6018B2AB8800856ECD /* RegisterRegisterButton.png in Resources */,
 				D519DE6218BD1A5D005C47BE /* MenuRecipesIcon.png in Resources */,
@@ -712,9 +749,11 @@
 				D5C3DC5B18B2AB8800856ECD /* ConnectionFacebookButton.png in Resources */,
 				D5C3DC6E18B2AB8800856ECD /* topBarRefreshButton.png in Resources */,
 				D5C3DC6118B2AB8800856ECD /* RegisterState1.png in Resources */,
+				7081E5EB18BE6145003D9507 /* Equilibra_75x75.png in Resources */,
 				D519DE6318BD1A5D005C47BE /* MenuRegisterIcon.png in Resources */,
 				D50A241518BA95A000C8A847 /* AccountFriendsButton.png in Resources */,
 				D519DE5718BD1A5D005C47BE /* MenuConnectionIcon.png in Resources */,
+				7081E5ED18BE6145003D9507 /* Equilibra_80x80.png in Resources */,
 				D519DE6118BD1A5D005C47BE /* MenuProfileIcon.png in Resources */,
 				D519DE6018BD1A5D005C47BE /* MenuPlanningsIcon.png in Resources */,
 				D5C3DC6D18B2AB8800856ECD /* topBarMenuButton.png in Resources */,
@@ -723,19 +762,25 @@
 				D50A241818BA95A000C8A847 /* AccountPlanningsButton.png in Resources */,
 				D519DE5118BD1A5D005C47BE /* MenuAccountIcon.png in Resources */,
 				D5C3DC5C18B2AB8800856ECD /* ConnectionGoogleButton.png in Resources */,
+				7081E5EE18BE6145003D9507 /* Equilibra_LogoOrigin.png in Resources */,
+				7081E5E918BE6145003D9507 /* Equilibra_16x16.png in Resources */,
 				D5C3DC6B18B2AB8800856ECD /* topBarLogo.png in Resources */,
 				D519DE5518BD1A5D005C47BE /* MenuBMIIcon.png in Resources */,
 				D519DE5F18BD1A5D005C47BE /* MenuNutritionIcon.png in Resources */,
 				D5C3DBE618B286DA00856ECD /* InfoPlist.strings in Resources */,
 				D519DE5D18BD1A5D005C47BE /* MenuLogoutIcon.png in Resources */,
+				7081E5E818BE6145003D9507 /* Equilibra_152x152.png in Resources */,
 				D5C3DC6218B2AB8800856ECD /* RegisterState2.png in Resources */,
 				D519DE6618BD1A5D005C47BE /* MenuSportPartnerIcon.png in Resources */,
+				7081E5EC18BE6145003D9507 /* Equilibra_76x76.png in Resources */,
 				D50A241918BA95A000C8A847 /* AccountProfileButton.png in Resources */,
 				D5C3DC6318B2AB8800856ECD /* RegisterState3.png in Resources */,
 				D50A241318BA95A000C8A847 /* AccountFavoritesButton.png in Resources */,
 				D519DE6518BD1A5D005C47BE /* MenuSportIcon.png in Resources */,
+				7081E5E618BE6145003D9507 /* Equilibra_120x120.png in Resources */,
 				D519DE5C18BD1A5D005C47BE /* MenuHomeIcon.png in Resources */,
 				D519DE5418BD1A5D005C47BE /* MenuArticlesIcon.png in Resources */,
+				7081E5E718BE6145003D9507 /* Equilibra_128x128.png in Resources */,
 				D519DE5318BD1A5D005C47BE /* MenuArrowRight.png in Resources */,
 				D519DE5618BD1A5D005C47BE /* MenuBodyFatIcon.png in Resources */,
 				D5C3DC5918B2AB8800856ECD /* ConnectionBox.png in Resources */,
@@ -939,6 +984,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Documents/FacebookSDK,
+					/Users/bricelebail/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Equilibra/Equilibra-Prefix.pch";
@@ -956,6 +1002,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Documents/FacebookSDK,
+					/Users/bricelebail/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Equilibra/Equilibra-Prefix.pch";
