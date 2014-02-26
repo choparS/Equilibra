@@ -15,6 +15,10 @@
 		D50A241818BA95A000C8A847 /* AccountPlanningsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A241118BA95A000C8A847 /* AccountPlanningsButton.png */; };
 		D50A241918BA95A000C8A847 /* AccountProfileButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D50A241218BA95A000C8A847 /* AccountProfileButton.png */; };
 		D50DCFEF18B8E6570072B89E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50DCFEE18B8E6570072B89E /* FacebookSDK.framework */; };
+		D51697DE18BD645E00356C79 /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51697DD18BD645E00356C79 /* ArticleViewController.m */; };
+		D51697E118BD64D600356C79 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51697E018BD64D600356C79 /* RecipeViewController.m */; };
+		D51697E418BD653A00356C79 /* ToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51697E318BD653A00356C79 /* ToolsViewController.m */; };
+		D51697E718BD656D00356C79 /* ForumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51697E618BD656D00356C79 /* ForumViewController.m */; };
 		D519DE2118BD1A28005C47BE /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D519DE1418BD1A28005C47BE /* AccountViewController.m */; };
 		D519DE2218BD1A28005C47BE /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D519DE1618BD1A28005C47BE /* FavoriteViewController.m */; };
 		D519DE2318BD1A28005C47BE /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D519DE1818BD1A28005C47BE /* FollowViewController.m */; };
@@ -129,6 +133,14 @@
 		D50A241118BA95A000C8A847 /* AccountPlanningsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountPlanningsButton.png; sourceTree = "<group>"; };
 		D50A241218BA95A000C8A847 /* AccountProfileButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccountProfileButton.png; sourceTree = "<group>"; };
 		D50DCFEE18B8E6570072B89E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		D51697DC18BD645E00356C79 /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
+		D51697DD18BD645E00356C79 /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
+		D51697DF18BD64D600356C79 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
+		D51697E018BD64D600356C79 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
+		D51697E218BD653A00356C79 /* ToolsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsViewController.h; sourceTree = "<group>"; };
+		D51697E318BD653A00356C79 /* ToolsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsViewController.m; sourceTree = "<group>"; };
+		D51697E518BD656D00356C79 /* ForumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumViewController.h; sourceTree = "<group>"; };
+		D51697E618BD656D00356C79 /* ForumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumViewController.m; sourceTree = "<group>"; };
 		D519DE1318BD1A28005C47BE /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		D519DE1418BD1A28005C47BE /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		D519DE1518BD1A28005C47BE /* FavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
@@ -571,6 +583,14 @@
 				D5F9D93F18BA56600014D6A7 /* Register */,
 				D5F9D94818BA56600014D6A7 /* SettingsViewController.h */,
 				D5F9D94918BA56600014D6A7 /* SettingsViewController.m */,
+				D51697DC18BD645E00356C79 /* ArticleViewController.h */,
+				D51697DD18BD645E00356C79 /* ArticleViewController.m */,
+				D51697DF18BD64D600356C79 /* RecipeViewController.h */,
+				D51697E018BD64D600356C79 /* RecipeViewController.m */,
+				D51697E218BD653A00356C79 /* ToolsViewController.h */,
+				D51697E318BD653A00356C79 /* ToolsViewController.m */,
+				D51697E518BD656D00356C79 /* ForumViewController.h */,
+				D51697E618BD656D00356C79 /* ForumViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -755,14 +775,18 @@
 				D5F9D93018BA56520014D6A7 /* Dialog.m in Sources */,
 				D5F9D95218BA56600014D6A7 /* RegisterViewController.m in Sources */,
 				D519DE3518BD1A46005C47BE /* MenuCell.m in Sources */,
+				D51697DE18BD645E00356C79 /* ArticleViewController.m in Sources */,
 				D5F9D94E18BA56600014D6A7 /* MenuViewController.m in Sources */,
 				D5F9D95118BA56600014D6A7 /* RegisterTwoViewController.m in Sources */,
 				D5C3DC2618B2889E00856ECD /* ECSlidingInteractiveTransition.m in Sources */,
 				D5C3DC2718B2889E00856ECD /* ECSlidingSegue.m in Sources */,
+				D51697E718BD656D00356C79 /* ForumViewController.m in Sources */,
 				D519DE2418BD1A28005C47BE /* FriendViewController.m in Sources */,
 				D5F9D93318BA56520014D6A7 /* WebServices.m in Sources */,
+				D51697E118BD64D600356C79 /* RecipeViewController.m in Sources */,
 				D519DE2718BD1A28005C47BE /* ProfileViewController.m in Sources */,
 				D5F9D94D18BA56600014D6A7 /* InitialViewController.m in Sources */,
+				D51697E418BD653A00356C79 /* ToolsViewController.m in Sources */,
 				D5C3DC3718B2971500856ECD /* MEDynamicTransition.m in Sources */,
 				D5F9D94B18BA56600014D6A7 /* ConnectionViewController.m in Sources */,
 				D5F9D94F18BA56600014D6A7 /* RegisterFourViewController.m in Sources */,

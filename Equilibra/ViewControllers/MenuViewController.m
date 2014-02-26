@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "UIViewController+ECSlidingViewController.h"
+#import "AppDelegate.h"
 #import "UserData.h"
 #import "MenuCell.h"
 #import "GroupMenuCell.h"
@@ -57,7 +58,7 @@
                                                       [MenuItem initialize:SUBMENU :@"My Plannings" :@"MenuPlanningsIcon" :@"png" :1 :nil],
                                                       [MenuItem initialize:SUBMENU :@"My Messages" :@"MenuMessagesIcon" :@"png" :1 :nil],
                                                       [MenuItem initialize:SUBMENU :@"My Friends" :@"MenuFriendsIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"My Favorites" :@"MenuLogoutIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :@"My Favorites" :@"MenuFavoritesIcon" :@"png" :1 :nil],
                                                       [MenuItem initialize:SUBMENU :@"Logout" :@"MenuLogoutIcon" :@"png" :1 :nil], nil]]];
     [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :@"Articles" :@"MenuArticlesIcon" :@"png" :-1
                                                     :[[NSMutableArray alloc] initWithObjects:
@@ -211,12 +212,46 @@
     
     if ([menu.title isEqualToString:@"Home"])
         self.slidingViewController.topViewController = self.homeNavigationController;
+    else if ([menu.title isEqualToString:@"Connection"])
+        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ConnectionNavigation"];
+    else if ([menu.title isEqualToString:@"Register"])
+        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RegisterNavigation"];
     else if ([menu.title isEqualToString:@"Account"])
         self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountNavigation"];
     else if ([menu.title isEqualToString:@"My Profile"])
-        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyProfile"];
-    else if ([menu.title isEqualToString:@"Connection"])
-        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ConnectionNavigation"];
+        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyProfileNavigation"];
+    else if ([menu.title isEqualToString:@"My Follows"])
+        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyFollowsNavigation"];
+    else if ([menu.title isEqualToString:@"My Plannings"])
+        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyPlanningsNavigation"];
+    else if ([menu.title isEqualToString:@"My Messages"])
+        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyMessagesNavigation"];
+    else if ([menu.title isEqualToString:@"My Friends"])
+        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyFriendsNavigation"];
+    else if ([menu.title isEqualToString:@"My Favorites"])
+        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyFavoritesNavigation"];
+    else if ([menu.title isEqualToString:@"Logout"]) {
+        if ([UserData getInstance].accountType == FACEBOOK) {
+            if (FBSession.activeSession.state == FBSessionStateOpen || FBSession.activeSession.state == FBSessionStateOpenTokenExtended)
+                [FBSession.activeSession closeAndClearTokenInformation];
+            else {
+                [FBSession openActiveSessionWithReadPermissions:@[@"basic_info", @"email", @"user_birthday"] allowLoginUI:YES
+                                              completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+                                                  AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+                                                  [appDelegate sessionStateChanged:session state:state error:error];
+                                              }];
+            }
+        }
+        self.slidingViewController.topViewController = self.homeNavigationController;
+    }
+    else if ([menu.title isEqualToString:@"Articles"])
+        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticlesNavigation"];
+    else if ([menu.title isEqualToString:@"Recipes"])
+        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RecipesNavigation"];
+    else if ([menu.title isEqualToString:@"Tools"])
+        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ToolsNavigation"];
+    else if ([menu.title isEqualToString:@"Forum"])
+        self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ForumNavigation"];
     else if ([menu.title isEqualToString:@"Settings"])
         self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsNavigation"];
     
