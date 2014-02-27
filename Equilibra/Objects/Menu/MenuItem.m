@@ -18,8 +18,9 @@
 @synthesize isOpen = _isOpen;
 @synthesize submenu = _submenu;
 
-+(MenuItem*)initialize:(enum CellType)cellType :(NSString *)title :(NSString *)iconName :(NSString *)iconType :(NSInteger)indexParent :(NSMutableArray*)submenu {
++ (MenuItem*)initialize:(enum CellType)cellType :(NSString *)title :(NSString *)iconName :(NSString *)iconType :(NSInteger)indexParent :(NSMutableArray*)submenu {
     MenuItem*   item = [MenuItem new];
+    
     item.cellType = cellType;
     item.title = title;
     item.iconName = iconName;

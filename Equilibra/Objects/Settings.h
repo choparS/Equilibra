@@ -13,11 +13,13 @@
 
     Transitions*    transitions;
     NSInteger*      transitionIndex;
+    NSString*       language;
 
 }
 
 @property (nonatomic, strong) Transitions*  transitions;
 @property NSInteger*                        transitionsIndex;
+@property NSString*                         language;
 
 /*
  Fonction qui permet de récupérer l'unique instance de la classe

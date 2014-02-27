@@ -48,13 +48,30 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4qC-cK-tXH">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FlagCell" id="4qC-cK-tXH" customClass="FlagCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4qC-cK-tXH" id="KIO-G5-PXO">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xB2-QA-3yx">
+                                                    <rect key="frame" x="12" y="10" width="24" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeS-o4-ufu">
+                                                    <rect key="frame" x="44" y="9" width="256" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.26208861119999999" green="0.54023872920000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="icon" destination="xB2-QA-3yx" id="QvF-sa-Sku"/>
+                                            <outlet property="title" destination="DeS-o4-ufu" id="9Z9-rC-gey"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="3wb-my-fIM" customClass="MenuCell">
                                         <rect key="frame" x="0.0" y="62" width="320" height="40"/>
@@ -146,10 +163,21 @@
                                     <outlet property="delegate" destination="irf-4Z-pBu" id="OVK-aq-1QJ"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a68-Bq-923">
+                                <rect key="frame" x="12" y="35" width="24" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="MenuFlagFR.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFlag:" destination="irf-4Z-pBu" eventType="touchUpInside" id="Wlq-NN-UrF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="flag" destination="a68-Bq-923" id="8W0-5v-CwM"/>
                         <outlet property="tableView" destination="wXh-RO-xPo" id="bTz-50-DVg"/>
                     </connections>
                 </viewController>
@@ -1899,6 +1927,7 @@
         <image name="ConnectionFacebookButton.png" width="370" height="50"/>
         <image name="ConnectionGoogleButton.png" width="370" height="50"/>
         <image name="ConnectionTwitterButton.png" width="370" height="50"/>
+        <image name="MenuFlagFR.png" width="48" height="38"/>
         <image name="RegisterNextButton.png" width="306" height="50"/>
         <image name="RegisterRegisterButton.png" width="306" height="50"/>
         <image name="RegisterState1.png" width="464" height="80"/>

@@ -1,0 +1,24 @@
+/* 
+  FR.strings
+  Equilibra
+
+  Created by Steeve Chopart on 2/27/14.
+  Copyright (c) 2014 Equilibra. All rights reserved.
+*/
+
+/* MENU */
+
+"MenuHome" = "Accueil";
+"MenuConnection" = "Se connecter";
+"MenuRegister" = "S'inscrire";
+"MenuArticles" = "Articles";
+"MenuNutrition" = "Nutrition";
+"MenuSport" = "Sport";
+"MenuWeight" = "Poids";
+"MenuRecipes" = "Recettes";
+"MenuTools" = "Outils";
+"MenuSportPartner" = "Partenaire sportif";
+"MenuBMI" = "Calculer son IMC";
+"MenuBodyFat" = "Calculer son IMG";
+"MenuForum" = "Forum";
+"MenuSettings" = "Réglages";

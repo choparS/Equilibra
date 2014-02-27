@@ -10,8 +10,12 @@
 
 @interface MenuViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIButton*    flag;
+@property (weak, nonatomic) IBOutlet UITableView*   tableView;
 
--(IBAction)showSubMenu:(id)sender;
+@property BOOL  menuFlagOpen;
+
+- (IBAction)showFlag:(id)sender;
+- (IBAction)showSubMenu:(id)sender;
 
 @end

@@ -65,6 +65,10 @@
 		D519DE6718BD1A5D005C47BE /* MenuToolsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D519DE4F18BD1A5D005C47BE /* MenuToolsIcon.png */; };
 		D519DE6818BD1A5D005C47BE /* MenuWeightIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D519DE5018BD1A5D005C47BE /* MenuWeightIcon.png */; };
 		D51C335818B68630009D69F1 /* Transitions.m in Sources */ = {isa = PBXBuildFile; fileRef = D51C335718B68630009D69F1 /* Transitions.m */; };
+		D555905D18BFA92D00893EEF /* MenuFlagEN.png in Resources */ = {isa = PBXBuildFile; fileRef = D555905B18BFA92D00893EEF /* MenuFlagEN.png */; };
+		D555905E18BFA92D00893EEF /* MenuFlagFR.png in Resources */ = {isa = PBXBuildFile; fileRef = D555905C18BFA92D00893EEF /* MenuFlagFR.png */; };
+		D555906118BFB50900893EEF /* MenuFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = D555906018BFB50900893EEF /* MenuFlag.m */; };
+		D555906418BFB87600893EEF /* FlagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D555906318BFB87600893EEF /* FlagCell.m */; };
 		D5C3DBDC18B286DA00856ECD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C3DBDB18B286DA00856ECD /* Foundation.framework */; };
 		D5C3DBDE18B286DA00856ECD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C3DBDD18B286DA00856ECD /* CoreGraphics.framework */; };
 		D5C3DBE018B286DA00856ECD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C3DBDF18B286DA00856ECD /* UIKit.framework */; };
@@ -107,6 +111,8 @@
 		D5C3DC6C18B2AB8800856ECD /* topBarLogoTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = D5C3DC5518B2AB8800856ECD /* topBarLogoTitle.png */; };
 		D5C3DC6D18B2AB8800856ECD /* topBarMenuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D5C3DC5618B2AB8800856ECD /* topBarMenuButton.png */; };
 		D5C3DC6E18B2AB8800856ECD /* topBarRefreshButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D5C3DC5718B2AB8800856ECD /* topBarRefreshButton.png */; };
+		D5F989DE18BEB84C006C859B /* FR.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F989DD18BEB84C006C859B /* FR.strings */; };
+		D5F989E018BEB85E006C859B /* EN.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F989DF18BEB85E006C859B /* EN.strings */; };
 		D5F9D92F18BA56520014D6A7 /* DataRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F9D92618BA56520014D6A7 /* DataRegister.m */; };
 		D5F9D93018BA56520014D6A7 /* Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F9D92818BA56520014D6A7 /* Dialog.m */; };
 		D5F9D93118BA56520014D6A7 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F9D92A18BA56520014D6A7 /* Settings.m */; };
@@ -209,6 +215,12 @@
 		D519DE5018BD1A5D005C47BE /* MenuWeightIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuWeightIcon.png; sourceTree = "<group>"; };
 		D51C335618B68630009D69F1 /* Transitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transitions.h; sourceTree = "<group>"; };
 		D51C335718B68630009D69F1 /* Transitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transitions.m; sourceTree = "<group>"; };
+		D555905B18BFA92D00893EEF /* MenuFlagEN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuFlagEN.png; sourceTree = "<group>"; };
+		D555905C18BFA92D00893EEF /* MenuFlagFR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuFlagFR.png; sourceTree = "<group>"; };
+		D555905F18BFB50900893EEF /* MenuFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuFlag.h; sourceTree = "<group>"; };
+		D555906018BFB50900893EEF /* MenuFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuFlag.m; sourceTree = "<group>"; };
+		D555906218BFB87600893EEF /* FlagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagCell.h; sourceTree = "<group>"; };
+		D555906318BFB87600893EEF /* FlagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlagCell.m; sourceTree = "<group>"; };
 		D5C3DBD818B286DA00856ECD /* Equilibra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equilibra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C3DBDB18B286DA00856ECD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D5C3DBDD18B286DA00856ECD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -265,6 +277,8 @@
 		D5C3DC5518B2AB8800856ECD /* topBarLogoTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topBarLogoTitle.png; sourceTree = "<group>"; };
 		D5C3DC5618B2AB8800856ECD /* topBarMenuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topBarMenuButton.png; sourceTree = "<group>"; };
 		D5C3DC5718B2AB8800856ECD /* topBarRefreshButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topBarRefreshButton.png; sourceTree = "<group>"; };
+		D5F989DD18BEB84C006C859B /* FR.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = FR.strings; sourceTree = "<group>"; };
+		D5F989DF18BEB85E006C859B /* EN.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = EN.strings; path = ../EN.strings; sourceTree = "<group>"; };
 		D5F9D92518BA56520014D6A7 /* DataRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataRegister.h; sourceTree = "<group>"; };
 		D5F9D92618BA56520014D6A7 /* DataRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRegister.m; sourceTree = "<group>"; };
 		D5F9D92718BA56520014D6A7 /* Dialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dialog.h; sourceTree = "<group>"; };
@@ -384,6 +398,10 @@
 				D519DE3018BD1A46005C47BE /* MenuItem.m */,
 				D519DE3118BD1A46005C47BE /* SubmenuCell.h */,
 				D519DE3218BD1A46005C47BE /* SubmenuCell.m */,
+				D555905F18BFB50900893EEF /* MenuFlag.h */,
+				D555906018BFB50900893EEF /* MenuFlag.m */,
+				D555906218BFB87600893EEF /* FlagCell.h */,
+				D555906318BFB87600893EEF /* FlagCell.m */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -391,6 +409,8 @@
 		D519DE3818BD1A5D005C47BE /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				D555905B18BFA92D00893EEF /* MenuFlagEN.png */,
+				D555905C18BFA92D00893EEF /* MenuFlagFR.png */,
 				D519DE3918BD1A5D005C47BE /* MenuAccountIcon.png */,
 				D519DE3A18BD1A5D005C47BE /* MenuArrowDown.png */,
 				D519DE3B18BD1A5D005C47BE /* MenuArrowRight.png */,
@@ -464,6 +484,8 @@
 				D5C3DBF018B286DA00856ECD /* Main_iPad.storyboard */,
 				D5C3DBF618B286DA00856ECD /* Images.xcassets */,
 				D5C3DBE218B286DA00856ECD /* Supporting Files */,
+				D5F989DD18BEB84C006C859B /* FR.strings */,
+				D5F989DF18BEB85E006C859B /* EN.strings */,
 			);
 			path = Equilibra;
 			sourceTree = "<group>";
@@ -723,6 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7081E5EA18BE6145003D9507 /* Equilibra_58x58.png in Resources */,
+				D5F989E018BEB85E006C859B /* EN.strings in Resources */,
 				D5C3DBF218B286DA00856ECD /* Main_iPad.storyboard in Resources */,
 				D5C3DC6018B2AB8800856ECD /* RegisterRegisterButton.png in Resources */,
 				D519DE6218BD1A5D005C47BE /* MenuRecipesIcon.png in Resources */,
@@ -738,7 +761,9 @@
 				D519DE5A18BD1A5D005C47BE /* MenuForumIcon.png in Resources */,
 				D519DE5818BD1A5D005C47BE /* MenuFavoritesIcon.png in Resources */,
 				D519DE5918BD1A5D005C47BE /* MenuFollowsIcon.png in Resources */,
+				D555905D18BFA92D00893EEF /* MenuFlagEN.png in Resources */,
 				D5C3DC6918B2AB8800856ECD /* topBar.png in Resources */,
+				D555905E18BFA92D00893EEF /* MenuFlagFR.png in Resources */,
 				D5C3DC5E18B2AB8800856ECD /* RegisterNextButton.png in Resources */,
 				D5C3DC5A18B2AB8800856ECD /* ConnectionConnectButton.png in Resources */,
 				D50A241718BA95A000C8A847 /* AccountMessagesButton.png in Resources */,
@@ -748,6 +773,7 @@
 				D5C3DBEF18B286DA00856ECD /* Main_iPhone.storyboard in Resources */,
 				D5C3DC5B18B2AB8800856ECD /* ConnectionFacebookButton.png in Resources */,
 				D5C3DC6E18B2AB8800856ECD /* topBarRefreshButton.png in Resources */,
+				D5F989DE18BEB84C006C859B /* FR.strings in Resources */,
 				D5C3DC6118B2AB8800856ECD /* RegisterState1.png in Resources */,
 				7081E5EB18BE6145003D9507 /* Equilibra_75x75.png in Resources */,
 				D519DE6318BD1A5D005C47BE /* MenuRegisterIcon.png in Resources */,
@@ -807,6 +833,7 @@
 				D519DE2618BD1A28005C47BE /* PlanningViewController.m in Sources */,
 				D519DE3618BD1A46005C47BE /* MenuItem.m in Sources */,
 				D5C3DBEC18B286DA00856ECD /* AppDelegate.m in Sources */,
+				D555906118BFB50900893EEF /* MenuFlag.m in Sources */,
 				D5F9D93118BA56520014D6A7 /* Settings.m in Sources */,
 				D519DE3418BD1A46005C47BE /* GroupMenuCell.m in Sources */,
 				D5F9D95318BA56600014D6A7 /* SettingsViewController.m in Sources */,
@@ -829,6 +856,7 @@
 				D519DE2418BD1A28005C47BE /* FriendViewController.m in Sources */,
 				D5F9D93318BA56520014D6A7 /* WebServices.m in Sources */,
 				D51697E118BD64D600356C79 /* RecipeViewController.m in Sources */,
+				D555906418BFB87600893EEF /* FlagCell.m in Sources */,
 				D519DE2718BD1A28005C47BE /* ProfileViewController.m in Sources */,
 				D5F9D94D18BA56600014D6A7 /* InitialViewController.m in Sources */,
 				D51697E418BD653A00356C79 /* ToolsViewController.m in Sources */,

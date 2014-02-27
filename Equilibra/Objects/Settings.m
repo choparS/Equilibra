@@ -12,6 +12,7 @@
 
 @synthesize transitions = _transitions;
 @synthesize transitionsIndex = _transitionsIndex;
+@synthesize language = _language;
 
 static Settings *instance = nil;
 
@@ -21,6 +22,7 @@ static Settings *instance = nil;
             instance = [Settings new];
             instance.transitions = [[Transitions alloc] init];
             instance.transitionsIndex = 0;
+            instance.language = @"FR";
         }
     }
     return instance;

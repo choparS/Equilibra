@@ -48,6 +48,6 @@
  Retour:
     L'instance créée et initialisée
  */
-+(MenuItem*)initialize:(enum CellType)cellType :(NSString*)title :(NSString*)iconName :(NSString*)iconType :(NSInteger)indexParent :(NSMutableArray*)submenu;
++ (MenuItem*)initialize:(enum CellType)cellType :(NSString*)title :(NSString*)iconName :(NSString*)iconType :(NSInteger)indexParent :(NSMutableArray*)submenu;
 
 @end
