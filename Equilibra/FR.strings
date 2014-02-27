@@ -11,6 +11,14 @@
 "MenuHome" = "Accueil";
 "MenuConnection" = "Se connecter";
 "MenuRegister" = "S'inscrire";
+"MenuAccount" = "Mon compte";
+"MenuMyProfile" = "Mon profil";
+"MenuMyFollows" = "Mes suivis";
+"MenuMyPlannings" = "Mes plannings";
+"MenuMyMessages" = "Mes messages";
+"MenuMyFriends" = "Mes amis";
+"MenuMyFavorites" = "Mes favoris";
+"MenuLogout" = "Se déconnecter";
 "MenuArticles" = "Articles";
 "MenuNutrition" = "Nutrition";
 "MenuSport" = "Sport";

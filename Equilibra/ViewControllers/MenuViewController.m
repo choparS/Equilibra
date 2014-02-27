@@ -70,34 +70,37 @@
     // Création des menus pour un utilisateur membre
     if (_menuItemsMember)
         return _menuItemsMember;
+    
+    Settings*   settings = [Settings getInstance];
+    
     _menuItemsMember = [[NSMutableArray alloc] init];
-    [_menuItemsMember addObject:[MenuItem initialize:MENU :@"Home" :@"MenuHomeIcon" :@"png" :-1 :nil]];
-    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :@"Account" :@"MenuAccountIcon" :@"png" :-1
+    [_menuItemsMember addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuHome", settings.language, @"") :@"MenuHomeIcon" :@"png" :-1 :nil]];
+    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuAccount", settings.language, @"") :@"MenuAccountIcon" :@"png" :-1
                                                     :[[NSMutableArray alloc] initWithObjects:
-                                                      [MenuItem initialize:SUBMENU :@"My Profile" :@"MenuProfileIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"My Follows" :@"MenuFollowsIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"My Plannings" :@"MenuPlanningsIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"My Messages" :@"MenuMessagesIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"My Friends" :@"MenuFriendsIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"My Favorites" :@"MenuFavoritesIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"Logout" :@"MenuLogoutIcon" :@"png" :1 :nil], nil]]];
-    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :@"Articles" :@"MenuArticlesIcon" :@"png" :-1
-                                                    :[[NSMutableArray alloc] initWithObjects:
-                                                      [MenuItem initialize:SUBMENU :@"Nutrition" :@"MenuNutritionIcon" :@"png" :2 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"Sport" :@"MenuSportIcon" :@"png" :2 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"Weight" :@"MenuWeightIcon" :@"png" :2 :nil], nil]]];
-    [_menuItemsMember addObject:[MenuItem initialize:MENU :@"Recipes" :@"MenuRecipesIcon" :@"png" :-1 :nil]];
-    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :@"Tools" :@"MenuToolsIcon" :@"png" :-1
-                                                    :[[NSMutableArray alloc] initWithObjects:
-                                                      [MenuItem initialize:SUBMENU :@"Sport Partners Search" :@"MenuSportPartnerIcon" :@"png" :4 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"BMI Calculation" :@"MenuBMIIcon" :@"png" :4 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"Body Fat Calculation" :@"MenuBodyFatIcon" :@"png" :4 :nil], nil]]];
-    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :@"Forum" :@"MenuForumIcon" :@"png" :-1
-                                                    :[[NSMutableArray alloc] initWithObjects:
-                                                      [MenuItem initialize:SUBMENU :@"Nutrition" :@"MenuNutritionIcon" :@"png" :5 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"Sport" :@"MenuSportIcon" :@"png" :5 :nil],
-                                                      [MenuItem initialize:SUBMENU :@"Weight" :@"MenuWeightIcon" :@"png" :5 :nil], nil]]];
-    [_menuItemsMember addObject:[MenuItem initialize:MENU :@"Settings" :@"MenuSettingsIcon" :@"png" :-1 :nil]];
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyProfile", settings.language, @"") :@"MenuProfileIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyFollows", settings.language, @"") :@"MenuFollowsIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyPlannings", settings.language, @"") :@"MenuPlanningsIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyMessages", settings.language, @"") :@"MenuMessagesIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyFriends", settings.language, @"") :@"MenuFriendsIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyFavorites", settings.language, @"") :@"MenuFavoritesIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuLogout", settings.language, @"") :@"MenuLogoutIcon" :@"png" :1 :nil], nil]]];
+    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuArticles", settings.language, @"") :@"MenuArticlesIcon" :@"png" :-1
+                                                   :[[NSMutableArray alloc] initWithObjects:
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuNutrition", settings.language, @"") :@"MenuNutritionIcon" :@"png" :2 :nil],
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"MenuSportIcon" :@"png" :2 :nil],
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"MenuWeightIcon" :@"png" :2 :nil], nil]]];
+    [_menuItemsMember addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuRecipes", settings.language, @"") :@"MenuRecipesIcon" :@"png" :-1 :nil]];
+    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuTools", settings.language, @"") :@"MenuToolsIcon" :@"png" :-1
+                                                   :[[NSMutableArray alloc] initWithObjects:
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSportPartner", settings.language, @"") :@"MenuSportPartnerIcon" :@"png" :4 :nil],
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuBMI", settings.language, @"") :@"MenuBMIIcon" :@"png" :4 :nil],
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuBodyFat", settings.language, @"") :@"MenuBodyFatIcon" :@"png" :4 :nil], nil]]];
+    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuForum", settings.language, @"") :@"MenuForumIcon" :@"png" :-1
+                                                   :[[NSMutableArray alloc] initWithObjects:
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuNutrition", settings.language, @"") :@"MenuNutritionIcon" :@"png" :5 :nil],
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"MenuSportIcon" :@"png" :5 :nil],
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"MenuWeightIcon" :@"png" :5 :nil], nil]]];
+    [_menuItemsMember addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuSettings", settings.language, @"") :@"MenuSettingsIcon" :@"png" :-1 :nil]];
     return _menuItemsMember;
 }
 
@@ -256,9 +259,10 @@
 
 // Fonction appelée lorsque l'utilisateur selectionne une cellule
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Settings*   settings = [Settings getInstance];
+    
     if (_menuFlagOpen) {
         MenuFlag*   flag = self.menuFlags[indexPath.row];
-        Settings*   settings = [Settings getInstance];
         
         if (settings.language != flag.code) {
             NSString*  filePath = [[NSBundle mainBundle] pathForResource:flag.iconName ofType:flag.iconType];
@@ -277,27 +281,27 @@
         self.slidingViewController.topViewController.view.layer.transform = CATransform3DMakeScale(1, 1, 1);
         
         // On redirige l'utilisateur selon la cellule selectionnée
-        if ([menu.title isEqualToString:@"Home"])
+        if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuHome", settings.language, @"")])
             self.slidingViewController.topViewController = self.homeNavigationController;
-        else if ([menu.title isEqualToString:@"Connection"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuConnection", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ConnectionNavigation"];
-        else if ([menu.title isEqualToString:@"Register"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuRegister", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RegisterNavigation"];
-        else if ([menu.title isEqualToString:@"Account"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuAccount", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountNavigation"];
-        else if ([menu.title isEqualToString:@"My Profile"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuMyProfile", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyProfileNavigation"];
-        else if ([menu.title isEqualToString:@"My Follows"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuMyFollows", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyFollowsNavigation"];
-        else if ([menu.title isEqualToString:@"My Plannings"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuMyPlannings", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyPlanningsNavigation"];
-        else if ([menu.title isEqualToString:@"My Messages"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuMyMessages", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyMessagesNavigation"];
-        else if ([menu.title isEqualToString:@"My Friends"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuMyFriends", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyFriendsNavigation"];
-        else if ([menu.title isEqualToString:@"My Favorites"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuMyFavorites", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyFavoritesNavigation"];
-        else if ([menu.title isEqualToString:@"Logout"]) {
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuLogout", settings.language, @"")]) {
             if ([UserData getInstance].accountType == FACEBOOK) {
                 if (FBSession.activeSession.state == FBSessionStateOpen || FBSession.activeSession.state == FBSessionStateOpenTokenExtended)
                     [FBSession.activeSession closeAndClearTokenInformation];
@@ -311,15 +315,15 @@
             }
             self.slidingViewController.topViewController = self.homeNavigationController;
         }
-        else if ([menu.title isEqualToString:@"Articles"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuArticles", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticlesNavigation"];
-        else if ([menu.title isEqualToString:@"Recipes"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuRecipes", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RecipesNavigation"];
-        else if ([menu.title isEqualToString:@"Tools"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuTools", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ToolsNavigation"];
-        else if ([menu.title isEqualToString:@"Forum"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuForum", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ForumNavigation"];
-        else if ([menu.title isEqualToString:@"Settings"])
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuSettings", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsNavigation"];
         
         [self.slidingViewController resetTopViewAnimated:YES];
