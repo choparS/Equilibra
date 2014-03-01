@@ -9,6 +9,7 @@
 #import "RegisterThreeViewController.h"
 #import "RegisterTwoViewController.h"
 #import "RegisterFourViewController.h"
+#import "Settings.h"
 
 @interface RegisterThreeViewController ()
 
@@ -18,8 +19,10 @@
 
 @synthesize data = _data;
 @synthesize goals = _goals;
-
+@synthesize viewTitle = _viewTitle;
+@synthesize goalLabel = _goalLabel;
 @synthesize goalList = _goalList;
+@synthesize submitButton = _submitButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +36,17 @@
     
     // On sélectionne la celulle via les données d'inscription
     [_goalList selectRow:[self getIndexFromTitle:_data.goal] inComponent:0 animated:TRUE];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    Settings*   settings = [Settings getInstance];
+    
+    // Initialisation du texte dans la langue paramétrée
+    [_viewTitle setText:NSLocalizedStringFromTable(@"RegisterViewTitle", settings.language, @"")];
+    [_goalLabel setText:NSLocalizedStringFromTable(@"RegisterGoalLabel", settings.language, @"")];
+    [_submitButton setTitle:NSLocalizedStringFromTable(@"RegisterSubmitButtonLabel", settings.language, @"") forState:UIControlStateNormal];
 }
 
 - (NSInteger)getIndexFromTitle:(NSString *)title {

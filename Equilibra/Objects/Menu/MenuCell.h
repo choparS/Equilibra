@@ -10,7 +10,7 @@
 
 @interface MenuCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIImageView *icon;
-@property (strong, nonatomic) IBOutlet UILabel *title;
+@property (strong, nonatomic) IBOutlet UIImageView* icon;
+@property (strong, nonatomic) IBOutlet UILabel*     title;
 
 @end

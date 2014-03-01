@@ -9,6 +9,7 @@
 #import "RegisterFourViewController.h"
 #import "RegisterThreeViewController.h"
 #import "WebServices.h"
+#import "Settings.h"
 
 @interface RegisterFourViewController ()
 
@@ -17,20 +18,37 @@
 @implementation RegisterFourViewController
 
 @synthesize data = _data;
-
-@synthesize newsletter = _newsletter;
-@synthesize termsOfUse = _termsOfUse;
+@synthesize viewTitle = _viewTitle;
+@synthesize newsletterSwitch = _newsletterSwitch;
+@synthesize newsletterLabel = _newsletterLabel;
+@synthesize termsOfUseSwitch = _termsOfUseSwitch;
+@synthesize termsOfUseLabel = _termsOfUseLabel;
+@synthesize registerButton = _registerButton;
+@synthesize requiredFieldsLabel = _requiredFieldsLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Récupération des données d'inscription
-    [_newsletter setOn:_data.newsletter];
+    [_newsletterSwitch setOn:_data.newsletter];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    Settings*   settings = [Settings getInstance];
+    
+    // Initialisation du texte dans la langue paramétrée
+    [_viewTitle setText:NSLocalizedStringFromTable(@"RegisterViewTitle", settings.language, @"")];
+    [_newsletterLabel setText:NSLocalizedStringFromTable(@"RegisterNewsletterLabel", settings.language, @"")];
+    [_termsOfUseLabel setText:NSLocalizedStringFromTable(@"RegisterTermsOfUseLabel", settings.language, @"")];
+    [_registerButton setTitle:NSLocalizedStringFromTable(@"RegisterRegisterButtonLabel", settings.language, @"") forState:UIControlStateNormal];
+    [_requiredFieldsLabel setText:NSLocalizedStringFromTable(@"RegisterRequiredFieldsLabel", settings.language, @"")];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Mise à jour et transfert des données d'inscription vers l'étape précédente
-    _data.newsletter = _newsletter.on;
+    _data.newsletter = _newsletterSwitch.on;
     if ([[segue identifier] isEqualToString:@"toRegisterThree"]) {
         RegisterThreeViewController *registerThree = [segue destinationViewController];
         registerThree.data = _data;
@@ -62,7 +80,7 @@
 
 - (IBAction)registerMe:(id)sender {
     // Si les conditions d'utilisation ont été approuvé
-    if (_termsOfUse.on) {
+    if (_termsOfUseSwitch.on) {
         WebServices *wbs = [[WebServices alloc] init];
         // On crée le dictionnaire avec les données d'inscription
         NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
@@ -78,7 +96,7 @@
         [data setObject:[NSString stringWithFormat:@"%@", _data.height] forKey:@"height"];
         [data setObject:[NSString stringWithFormat:@"%@", _data.zipCode] forKey:@"zipCode"];
         [data setObject:[NSString stringWithFormat:@"%@", _data.goal] forKey:@"goal"];
-        [data setObject:[NSString stringWithFormat:@"%@", _newsletter.on ? @"true" : @"false"] forKey:@"newsletter"];
+        [data setObject:[NSString stringWithFormat:@"%@", _newsletterSwitch.on ? @"true" : @"false"] forKey:@"newsletter"];
         
         // On envoie les données au webservice d'inscription, puis on récupère la réponse du serveur
         NSDictionary *answer = [wbs WBSRegister:data];

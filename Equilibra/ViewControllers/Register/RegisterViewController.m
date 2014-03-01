@@ -12,6 +12,7 @@
 #import "RegisterTwoViewController.h"
 #import "WebServices.h"
 #import "Dialog.h"
+#import "Settings.h"
 
 @interface RegisterViewController ()
 
@@ -22,11 +23,17 @@
 @implementation RegisterViewController
 
 @synthesize data = _data;
-
-@synthesize pseudo = _pseudo;
-@synthesize email = _email;
-@synthesize password = _password;
-@synthesize confirmPassword = _confirmPassword;
+@synthesize viewTitle = _viewTitle;
+@synthesize pseudoLabel = _pseudoLabel;
+@synthesize pseudoInput = _pseudoInput;
+@synthesize emailLabel = _emailLabel;
+@synthesize emailInput = _emailInput;
+@synthesize passwordLabel = _passwordLabel;
+@synthesize passwordInput = _passwordInput;
+@synthesize confirmPasswordLabel = _confirmPasswordLabel;
+@synthesize confirmPasswordInput = _confirmPasswordInput;
+@synthesize submitButton = _submitButton;
+@synthesize requiredFieldsLabel = _requiredFieldsLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,14 +43,25 @@
         _data = [DataRegister initialize];
     
     // Récupération des données d'inscription
-    [_pseudo setText:_data.pseudo];
-    [_email setText:_data.email];
-    [_password setText:_data.password];
-    [_confirmPassword setText:_data.password];
+    [_pseudoInput setText:_data.pseudo];
+    [_emailInput setText:_data.email];
+    [_passwordInput setText:_data.password];
+    [_confirmPasswordInput setText:_data.password];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    Settings*   settings = [Settings getInstance];
+    
+    // Initialisation du texte dans la langue paramétrée
+    [_viewTitle setText:NSLocalizedStringFromTable(@"RegisterViewTitle", settings.language, @"")];
+    [_pseudoLabel setText:NSLocalizedStringFromTable(@"RegisterPseudoLabel", settings.language, @"")];
+    [_emailLabel setText:NSLocalizedStringFromTable(@"RegisterEmailLabel", settings.language, @"")];
+    [_passwordLabel setText:NSLocalizedStringFromTable(@"RegisterPasswordLabel", settings.language, @"")];
+    [_confirmPasswordLabel setText:NSLocalizedStringFromTable(@"RegisterConfirmPasswordLabel", settings.language, @"")];
+    [_submitButton setTitle:NSLocalizedStringFromTable(@"RegisterSubmitButtonLabel", settings.language, @"") forState:UIControlStateNormal];
+    [_requiredFieldsLabel setText:NSLocalizedStringFromTable(@"RegisterRequiredFieldsLabel", settings.language, @"")];
     
     // Initialisation de la transition et du contrôle gestuel permettant d'ouvrir le menu en glissant le doigt de gauche à droite
     if ([(NSObject *)self.slidingViewController.delegate isKindOfClass:[MEDynamicTransition class]]) {
@@ -101,31 +119,31 @@
     BOOL error = FALSE;
     
     // Vérification des champs fourni par l'utilisateur
-    if (![self checkPseudo:_pseudo.text]) {
-        _pseudo.backgroundColor = [UIColor redColor];
+    if (![self checkPseudo:_pseudoInput.text]) {
+        _pseudoInput.backgroundColor = [UIColor redColor];
         error = TRUE;
     }
     
-    if (![self checkEmail:_email.text]) {
-        _email.backgroundColor = [UIColor redColor];
+    if (![self checkEmail:_emailInput.text]) {
+        _emailInput.backgroundColor = [UIColor redColor];
         error = TRUE;
     }
     
-    if (![self checkPassword:_password.text]) {
-        _password.backgroundColor = [UIColor redColor];
+    if (![self checkPassword:_passwordInput.text]) {
+        _passwordInput.backgroundColor = [UIColor redColor];
         error = TRUE;
     }
 
-    if (![_confirmPassword.text isEqualToString:_password.text]) {
-        _confirmPassword.backgroundColor = [UIColor redColor];
+    if (![_confirmPasswordInput.text isEqualToString:_passwordInput.text]) {
+        _confirmPasswordInput.backgroundColor = [UIColor redColor];
         error = TRUE;
     }
     
     // Si il n'y a aucune erreur, on met à jour les données d'inscription puis on redirige l'utilisateur vers l'étape suivante
     if (!error) {
-        _data.pseudo = _pseudo.text;
-        _data.email = _email.text;
-        _data.password = _password.text;
+        _data.pseudo = _pseudoInput.text;
+        _data.email = _emailInput.text;
+        _data.password = _passwordInput.text;
         [self performSegueWithIdentifier:@"toRegisterTwo" sender:self];
     }
 }

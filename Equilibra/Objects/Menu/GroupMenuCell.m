@@ -11,6 +11,7 @@
 @implementation GroupMenuCell
 
 @synthesize arrowButton = _arrowButton;
+@synthesize arrowIcon = _arrowIcon;
 @synthesize icon = _icon;
 @synthesize title = _title;
 

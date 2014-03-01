@@ -30,3 +30,65 @@
 "MenuBodyFat" = "Calculer son IMG";
 "MenuForum" = "Forum";
 "MenuSettings" = "Réglages";
+
+/* CONNECTION */
+
+"ConnectionViewTitle" = "Connexion";
+"ConnectionUsernameLabel" = "Pseudo";
+"ConnectionPasswordLabel" = "Mot de passe";
+"ConnectionRememberMeLabel" = "Se souvenir de moi";
+"ConnectionConnectButtonLabel" = "Connexion";
+"ConnectionFacebookButtonLabel" = "Connexion Facebook";
+"ConnectionTwitterButtonLabel" = "Connexion Twitter";
+"ConnectionGoogleButtonLabel" = "Connexion Google";
+"ConnectionRegisterButtonLabel" = "S'inscrire";
+"ConnectionForgotPasswordButtonLabel" = "Mot de passe oublié ?";
+
+/* REGISTER */
+
+"RegisterViewTitle" = "Inscription";
+"RegisterPseudoLabel" = "Pseudo*";
+"RegisterEmailLabel" = "Email*";
+"RegisterPasswordLabel" = "Mot de passe*";
+"RegisterConfirmPasswordLabel" = "Confirmation du mot de passe*";
+"RegisterSubmitButtonLabel" = "Suivant";
+"RegisterRequiredFieldsLabel" = "(*) Champs obligatoires";
+"RegisterFirstNameLabel" = "Prénom";
+"RegisterLastNameLabel" = "Nom";
+"RegisterDateOfBirthLabel" = "Date de naissance (aaaa-mm-jj)";
+"RegisterGenderLabel" = "Genre";
+"RegisterGenderLeftLabel" = "Homme";
+"RegisterGenderRightLabel" = "Femme";
+"RegisterWeightLabel" = "Poids (kg)";
+"RegisterHeightLabel" = "Taille (cm)";
+"RegisterZipCodeLabel" = "Code postal";
+"RegisterGoalLabel" = "Quel est ton objectif ?";
+"RegisterNewsletterLabel" = "Je m'inscris à la newsletter";
+"RegisterTermsOfUseLabel" = "J'ai lu et accepté les conditions d'utilisation";
+"RegisterRegisterButtonLabel" = "Inscription";
+
+/* ACCOUNT */
+
+"AccountViewTitle" = "Mon Compte";
+"AccountMyProfileButtonLabel" = "Mon profil";
+"AccountMyFollowsButtonLabel" = "Mes suivis";
+"AccountMyPlanningsButtonLabel" = "Mes plannings";
+"AccountMyMessagesButtonLabel" = "Mes messages";
+"AccountMyFriendsButtonLabel" = "Mes amis";
+"AccountMyFavoritesButtonLabel" = "Mes favoris";
+"AccountLogoutButtonLabel" = "Déconnexion";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

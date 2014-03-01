@@ -10,10 +10,10 @@
 
 @interface MenuViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIButton*    flag;
+@property (strong, nonatomic) IBOutlet UIButton*    flagButton;
+@property (strong, nonatomic) IBOutlet UIImageView* flagIcon;
 @property (weak, nonatomic) IBOutlet UITableView*   tableView;
-
-@property BOOL  menuFlagOpen;
+@property BOOL                                      menuFlagOpen;
 
 - (IBAction)showFlag:(id)sender;
 - (IBAction)showSubMenu:(id)sender;

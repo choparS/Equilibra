@@ -14,7 +14,12 @@
 @property (strong, nonatomic) DataRegister*             data;
 @property (strong, nonatomic) NSArray*                  goals;
 
+@property (strong, nonatomic) IBOutlet UILabel*         viewTitle;
+
+@property (strong, nonatomic) IBOutlet UILabel*         goalLabel;
 @property (strong, nonatomic) IBOutlet UIPickerView*    goalList;
+
+@property (strong, nonatomic) IBOutlet UIButton*        submitButton;
 
 /*
  Fonction qui permet de récupérer l'index d'un élèment de la liste depuis son titre

@@ -9,8 +9,9 @@
 #import "AccountViewController.h"
 #import "MEDynamicTransition.h"
 #import "UIViewController+ECSlidingViewController.h"
-#import "UserData.h"
 #import "AppDelegate.h"
+#import "UserData.h"
+#import "Settings.h"
 
 @interface AccountViewController ()
 
@@ -20,6 +21,15 @@
 
 @implementation AccountViewController
 
+@synthesize viewTitle = _viewTitle;
+@synthesize myProfileButton = _myProfileButton;
+@synthesize myFollowsButton = _myFollowsButton;
+@synthesize myPlanningsButton = _myPlanningsButton;
+@synthesize myMessagesButton = _myMessagesButton;
+@synthesize myFriendsButton = _myFriendsButton;
+@synthesize myFavoritesButton = _myFavoritesButton;
+@synthesize logoutButton = _logoutButton;
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -28,6 +38,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    Settings*   settings = [Settings getInstance];
+    
+    // Initialisation du texte dans la langue paramétrée
+    [_viewTitle setText:NSLocalizedStringFromTable(@"AccountViewTitle", settings.language, @"")];
+    [_myProfileButton setTitle:NSLocalizedStringFromTable(@"AccountMyProfileButtonLabel", settings.language, @"") forState:UIControlStateNormal];
+    [_myFollowsButton setTitle:NSLocalizedStringFromTable(@"AccountMyFollowsButtonLabel", settings.language, @"") forState:UIControlStateNormal];
+    [_myPlanningsButton setTitle:NSLocalizedStringFromTable(@"AccountMyPlanningsButtonLabel", settings.language, @"") forState:UIControlStateNormal];
+    [_myMessagesButton setTitle:NSLocalizedStringFromTable(@"AccountMyMessagesButtonLabel", settings.language, @"") forState:UIControlStateNormal];
+    [_myFriendsButton setTitle:NSLocalizedStringFromTable(@"AccountMyFriendsButtonLabel", settings.language, @"") forState:UIControlStateNormal];
+    [_myFavoritesButton setTitle:NSLocalizedStringFromTable(@"AccountMyFavoritesButtonLabel", settings.language, @"") forState:UIControlStateNormal];
+    [_logoutButton setTitle:NSLocalizedStringFromTable(@"AccountLogoutButtonLabel", settings.language, @"") forState:UIControlStateNormal];
     
     if ([(NSObject *)self.slidingViewController.delegate isKindOfClass:[MEDynamicTransition class]]) {
         MEDynamicTransition *dynamicTransition = (MEDynamicTransition *)self.slidingViewController.delegate;

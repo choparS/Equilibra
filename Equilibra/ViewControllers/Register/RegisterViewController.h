@@ -13,10 +13,22 @@
 
 @property (strong, nonatomic) DataRegister*         data;
 
-@property (strong, nonatomic) IBOutlet UITextField* pseudo;
-@property (strong, nonatomic) IBOutlet UITextField* email;
-@property (strong, nonatomic) IBOutlet UITextField* password;
-@property (strong, nonatomic) IBOutlet UITextField* confirmPassword;
+@property (strong, nonatomic) IBOutlet UILabel*     viewTitle;
+
+@property (strong, nonatomic) IBOutlet UILabel*     pseudoLabel;
+@property (strong, nonatomic) IBOutlet UITextField* pseudoInput;
+
+@property (strong, nonatomic) IBOutlet UILabel*     emailLabel;
+@property (strong, nonatomic) IBOutlet UITextField* emailInput;
+
+@property (strong, nonatomic) IBOutlet UILabel*     passwordLabel;
+@property (strong, nonatomic) IBOutlet UITextField* passwordInput;
+
+@property (strong, nonatomic) IBOutlet UILabel*     confirmPasswordLabel;
+@property (strong, nonatomic) IBOutlet UITextField* confirmPasswordInput;
+
+@property (strong, nonatomic) IBOutlet UIButton*    submitButton;
+@property (strong, nonatomic) IBOutlet UILabel*     requiredFieldsLabel;
 
 - (IBAction)menuButtonTapped:(id)sender;
 - (IBAction)checkInformation:(id)sender;

@@ -13,13 +13,30 @@
 
 @property (strong, nonatomic) DataRegister*                 data;
 
-@property (strong, nonatomic) IBOutlet UITextField*         firstName;
-@property (strong, nonatomic) IBOutlet UITextField*         lastName;
-@property (strong, nonatomic) IBOutlet UITextField*         dateOfBirth;
-@property (strong, nonatomic) IBOutlet UISegmentedControl*  gender;
-@property (strong, nonatomic) IBOutlet UITextField*         weight;
-@property (strong, nonatomic) IBOutlet UITextField*         height;
-@property (strong, nonatomic) IBOutlet UITextField*         zipCode;
+@property (strong, nonatomic) IBOutlet UILabel *viewTitle;
+
+@property (strong, nonatomic) IBOutlet UILabel *firstNameLabel;
+@property (strong, nonatomic) IBOutlet UITextField *firstNameInput;
+
+@property (strong, nonatomic) IBOutlet UILabel *lastNameLabel;
+@property (strong, nonatomic) IBOutlet UITextField *lastNameInput;
+
+@property (strong, nonatomic) IBOutlet UILabel *dateOfBirthLabel;
+@property (strong, nonatomic) IBOutlet UITextField *dateOfBirthInput;
+
+@property (strong, nonatomic) IBOutlet UILabel *genderLabel;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *genderControl;
+
+@property (strong, nonatomic) IBOutlet UILabel *weightLabel;
+@property (strong, nonatomic) IBOutlet UITextField *weightInput;
+
+@property (strong, nonatomic) IBOutlet UILabel *heightLabel;
+@property (strong, nonatomic) IBOutlet UITextField *heightInput;
+
+@property (strong, nonatomic) IBOutlet UILabel *zipCodeLabel;
+@property (strong, nonatomic) IBOutlet UITextField *zipCodeInput;
+
+@property (strong, nonatomic) IBOutlet UIButton *submitButton;
 
 - (IBAction)checkInformation:(id)sender;
 @end

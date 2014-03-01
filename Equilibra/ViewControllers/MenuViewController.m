@@ -29,7 +29,8 @@
 
 @implementation MenuViewController
 
-@synthesize flag = _flag;
+@synthesize flagButton = _flagButton;
+@synthesize flagIcon = _flagIcon;
 @synthesize tableView = _tableView;
 @synthesize menuFlagOpen = _menuFlagOpen;
 
@@ -61,8 +62,8 @@
     if (_menuFlags)
         return _menuFlags;
     _menuFlags = [[NSMutableArray alloc] init];
-    [_menuFlags addObject:[MenuFlag initialize:@"English" :@"EN" :@"MenuFlagEN" :@"png"]];
-    [_menuFlags addObject:[MenuFlag initialize:@"France" :@"FR" :@"MenuFlagFR" :@"png"]];
+    [_menuFlags addObject:[MenuFlag initialize:@"France" :@"FR" :@"menuFlagFR" :@"png"]];
+    [_menuFlags addObject:[MenuFlag initialize:@"United Kingdom" :@"UK" :@"menuFlagUK" :@"png"]];
     return _menuFlags;
 }
 
@@ -74,33 +75,33 @@
     Settings*   settings = [Settings getInstance];
     
     _menuItemsMember = [[NSMutableArray alloc] init];
-    [_menuItemsMember addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuHome", settings.language, @"") :@"MenuHomeIcon" :@"png" :-1 :nil]];
-    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuAccount", settings.language, @"") :@"MenuAccountIcon" :@"png" :-1
+    [_menuItemsMember addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuHome", settings.language, @"") :@"menuHomeIcon" :@"png" :-1 :nil]];
+    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuAccount", settings.language, @"") :@"menuMyAccountIcon" :@"png" :-1
                                                     :[[NSMutableArray alloc] initWithObjects:
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyProfile", settings.language, @"") :@"MenuProfileIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyFollows", settings.language, @"") :@"MenuFollowsIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyPlannings", settings.language, @"") :@"MenuPlanningsIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyMessages", settings.language, @"") :@"MenuMessagesIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyFriends", settings.language, @"") :@"MenuFriendsIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyFavorites", settings.language, @"") :@"MenuFavoritesIcon" :@"png" :1 :nil],
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuLogout", settings.language, @"") :@"MenuLogoutIcon" :@"png" :1 :nil], nil]]];
-    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuArticles", settings.language, @"") :@"MenuArticlesIcon" :@"png" :-1
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyProfile", settings.language, @"") :@"menuMyProfileIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyFollows", settings.language, @"") :@"menuMyFollowsIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyPlannings", settings.language, @"") :@"menuMyPlanningsIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyMessages", settings.language, @"") :@"menuMyMessagesIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyFriends", settings.language, @"") :@"menuMyFriendsIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuMyFavorites", settings.language, @"") :@"menuMyFavoritesIcon" :@"png" :1 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuLogout", settings.language, @"") :@"menuLogoutIcon" :@"png" :1 :nil], nil]]];
+    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuArticles", settings.language, @"") :@"menuArticlesIcon" :@"png" :-1
                                                    :[[NSMutableArray alloc] initWithObjects:
-                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuNutrition", settings.language, @"") :@"MenuNutritionIcon" :@"png" :2 :nil],
-                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"MenuSportIcon" :@"png" :2 :nil],
-                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"MenuWeightIcon" :@"png" :2 :nil], nil]]];
-    [_menuItemsMember addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuRecipes", settings.language, @"") :@"MenuRecipesIcon" :@"png" :-1 :nil]];
-    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuTools", settings.language, @"") :@"MenuToolsIcon" :@"png" :-1
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuNutrition", settings.language, @"") :@"menuNutritionIcon" :@"png" :2 :nil],
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"menuSportIcon" :@"png" :2 :nil],
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"menuWeightIcon" :@"png" :2 :nil], nil]]];
+    [_menuItemsMember addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuRecipes", settings.language, @"") :@"menuRecipesIcon" :@"png" :-1 :nil]];
+    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuTools", settings.language, @"") :@"menuToolsIcon" :@"png" :-1
                                                    :[[NSMutableArray alloc] initWithObjects:
-                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSportPartner", settings.language, @"") :@"MenuSportPartnerIcon" :@"png" :4 :nil],
-                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuBMI", settings.language, @"") :@"MenuBMIIcon" :@"png" :4 :nil],
-                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuBodyFat", settings.language, @"") :@"MenuBodyFatIcon" :@"png" :4 :nil], nil]]];
-    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuForum", settings.language, @"") :@"MenuForumIcon" :@"png" :-1
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSportPartner", settings.language, @"") :@"menuSportPartnerIcon" :@"png" :4 :nil],
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuBMI", settings.language, @"") :@"menuBMIIcon" :@"png" :4 :nil],
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuBodyFat", settings.language, @"") :@"menuBodyFatIcon" :@"png" :4 :nil], nil]]];
+    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuForum", settings.language, @"") :@"menuForumIcon" :@"png" :-1
                                                    :[[NSMutableArray alloc] initWithObjects:
-                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuNutrition", settings.language, @"") :@"MenuNutritionIcon" :@"png" :5 :nil],
-                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"MenuSportIcon" :@"png" :5 :nil],
-                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"MenuWeightIcon" :@"png" :5 :nil], nil]]];
-    [_menuItemsMember addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuSettings", settings.language, @"") :@"MenuSettingsIcon" :@"png" :-1 :nil]];
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuNutrition", settings.language, @"") :@"menuNutritionIcon" :@"png" :5 :nil],
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"menuSportIcon" :@"png" :5 :nil],
+                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"menuWeightIcon" :@"png" :5 :nil], nil]]];
+    [_menuItemsMember addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuSettings", settings.language, @"") :@"menuSettingsIcon" :@"png" :-1 :nil]];
     return _menuItemsMember;
 }
 
@@ -112,27 +113,27 @@
     Settings*   settings = [Settings getInstance];
     
     _menuItemsGuest = [[NSMutableArray alloc] init];
-    [_menuItemsGuest addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuHome", settings.language, @"") :@"MenuHomeIcon" :@"png" :-1 :nil]];
-    [_menuItemsGuest addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuConnection", settings.language, @"") :@"MenuConnectionIcon" :@"png" :-1
+    [_menuItemsGuest addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuHome", settings.language, @"") :@"menuHomeIcon" :@"png" :-1 :nil]];
+    [_menuItemsGuest addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuConnection", settings.language, @"") :@"menuConnectionIcon" :@"png" :-1
                                                     :[[NSMutableArray alloc] initWithObjects:
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuRegister", settings.language, @"") :@"MenuRegisterIcon" :@"png" :1 :nil], nil]]];
-    [_menuItemsGuest addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuArticles", settings.language, @"") :@"MenuArticlesIcon" :@"png" :-1
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuRegister", settings.language, @"") :@"menuRegisterIcon" :@"png" :1 :nil], nil]]];
+    [_menuItemsGuest addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuArticles", settings.language, @"") :@"menuArticlesIcon" :@"png" :-1
                                                     :[[NSMutableArray alloc] initWithObjects:
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuNutrition", settings.language, @"") :@"MenuNutritionIcon" :@"png" :2 :nil],
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"MenuSportIcon" :@"png" :2 :nil],
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"MenuWeightIcon" :@"png" :2 :nil], nil]]];
-    [_menuItemsGuest addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuRecipes", settings.language, @"") :@"MenuRecipesIcon" :@"png" :-1 :nil]];
-    [_menuItemsGuest addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuTools", settings.language, @"") :@"MenuToolsIcon" :@"png" :-1
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuNutrition", settings.language, @"") :@"menuNutritionIcon" :@"png" :2 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"menuSportIcon" :@"png" :2 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"menuWeightIcon" :@"png" :2 :nil], nil]]];
+    [_menuItemsGuest addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuRecipes", settings.language, @"") :@"menuRecipesIcon" :@"png" :-1 :nil]];
+    [_menuItemsGuest addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuTools", settings.language, @"") :@"menuToolsIcon" :@"png" :-1
                                                     :[[NSMutableArray alloc] initWithObjects:
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSportPartner", settings.language, @"") :@"MenuSportPartnerIcon" :@"png" :4 :nil],
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuBMI", settings.language, @"") :@"MenuBMIIcon" :@"png" :4 :nil],
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuBodyFat", settings.language, @"") :@"MenuBodyFatIcon" :@"png" :4 :nil], nil]]];
-    [_menuItemsGuest addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuForum", settings.language, @"") :@"MenuForumIcon" :@"png" :-1
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSportPartner", settings.language, @"") :@"menuSportPartnerIcon" :@"png" :4 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuBMI", settings.language, @"") :@"menuBMIIcon" :@"png" :4 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuBodyFat", settings.language, @"") :@"menuBodyFatIcon" :@"png" :4 :nil], nil]]];
+    [_menuItemsGuest addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuForum", settings.language, @"") :@"menuForumIcon" :@"png" :-1
                                                     :[[NSMutableArray alloc] initWithObjects:
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuNutrition", settings.language, @"") :@"MenuNutritionIcon" :@"png" :5 :nil],
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"MenuSportIcon" :@"png" :5 :nil],
-                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"MenuWeightIcon" :@"png" :5 :nil], nil]]];
-    [_menuItemsGuest addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuSettings", settings.language, @"") :@"MenuSettingsIcon" :@"png" :-1 :nil]];
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuNutrition", settings.language, @"") :@"menuNutritionIcon" :@"png" :5 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"menuSportIcon" :@"png" :5 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"menuWeightIcon" :@"png" :5 :nil], nil]]];
+    [_menuItemsGuest addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuSettings", settings.language, @"") :@"menuSettingsIcon" :@"png" :-1 :nil]];
     return _menuItemsGuest;
 }
 
@@ -228,12 +229,12 @@
         else if (menu.cellType == GROUP_MENU) {
             GroupMenuCell*  groupMenuCell = [tableView dequeueReusableCellWithIdentifier:@"GroupMenuCell"];
             NSString*       filePathIcon = [[NSBundle mainBundle] pathForResource:menu.iconName ofType:menu.iconType];
-            NSString*       buttonName = (menu.isOpen) ? @"MenuArrowDown" : @"MenuArrowRight";
+            NSString*       buttonName = (menu.isOpen) ? @"menuArrowDown" : @"menuArrowRight";
             NSString*       filePathButton = [[NSBundle mainBundle] pathForResource:buttonName ofType:@"png"];
         
             [groupMenuCell.icon setImage:[[UIImage alloc] initWithContentsOfFile:filePathIcon]];
             groupMenuCell.arrowButton.indexCell = [menuItems indexOfObject:(id)menu];
-            [groupMenuCell.arrowButton setImage:[[UIImage alloc] initWithContentsOfFile:filePathButton] forState:UIControlStateNormal];
+            [groupMenuCell.arrowIcon setImage:[[UIImage alloc] initWithContentsOfFile:filePathButton]];
             groupMenuCell.title.text = menu.title;
             [groupMenuCell setBackgroundColor:[UIColor clearColor]];
             return groupMenuCell;
@@ -268,12 +269,13 @@
             NSString*  filePath = [[NSBundle mainBundle] pathForResource:flag.iconName ofType:flag.iconType];
             
             settings.language = flag.code;
-            [_flag setImage:[[UIImage alloc] initWithContentsOfFile:filePath] forState:UIControlStateNormal];
+            [_flagIcon setImage:[[UIImage alloc] initWithContentsOfFile:filePath]];
             _menuItemsGuest = nil;
             _menuItemsMember = nil;
         }
         _menuFlagOpen = FALSE;
         [self viewWillAppear:FALSE];
+        [self.slidingViewController.topViewController viewWillAppear:FALSE];
     }
     else {
         MenuItem*   menu = [self getItemFromIndex:indexPath.row];
