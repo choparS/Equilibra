@@ -10,6 +10,8 @@
 
 @interface SettingsViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *viewTitle;
+
 - (IBAction)menuButtonTapped:(id)sender;
 - (IBAction)defaultButtonTapped:(id)sender;
 - (IBAction)folderButtonTapped:(id)sender;

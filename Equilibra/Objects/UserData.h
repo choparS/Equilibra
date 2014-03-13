@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FacebookSDK/FBProfilePictureView.h"
+#import "GoogleOpenSource/GTLPlusPerson.h"
 
 @interface UserData : NSObject {
 
@@ -34,7 +35,7 @@
     NSString*           goal;
     BOOL                newsletter;
     
-    UIImage*                profilePicture;
+    UIImageView*            profilePicture;
     FBProfilePictureView*   profilePictureFB;
     
 }
@@ -55,7 +56,7 @@
 @property (strong, nonatomic) NSString* goal;
 @property BOOL                          newsletter;
 
-@property (strong, nonatomic) UIImage*              profilePicture;
+@property (strong, nonatomic) UIImageView*          profilePicture;
 @property (strong, nonatomic) FBProfilePictureView* profilePictureFB;
 
 /*

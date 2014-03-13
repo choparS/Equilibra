@@ -9,6 +9,7 @@
 #import "AccountViewController.h"
 #import "MEDynamicTransition.h"
 #import "UIViewController+ECSlidingViewController.h"
+#import "GooglePlus/GooglePlus.h"
 #import "AppDelegate.h"
 #import "UserData.h"
 #import "Settings.h"
@@ -81,6 +82,16 @@
                                             AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
                                             [appDelegate sessionStateChanged:session state:state error:error];
                                         }];
+        }
+    }
+    else if ([UserData getInstance].accountType == GOOGLE) {
+        [[GPPSignIn sharedInstance] signOut];
+        if (![[GPPSignIn sharedInstance] authentication]) {
+            NSLog(@"Session Google closed");
+            UserData*   userData = [UserData getInstance];
+            
+            userData.connected = FALSE;
+            userData.accountType = EQUILIBRA;
         }
     }
     [self performSegueWithIdentifier:@"toHome" sender:self];

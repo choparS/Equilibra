@@ -9,7 +9,7 @@
 #import "MessageViewController.h"
 #import "MEDynamicTransition.h"
 #import "UIViewController+ECSlidingViewController.h"
-
+#import "Settings.h"
 @interface MessageViewController ()
 
 @property (nonatomic, strong) UIPanGestureRecognizer*   dynamicTransitionPanGesture;
@@ -17,6 +17,8 @@
 @end
 
 @implementation MessageViewController
+
+@synthesize viewTitle = _viewTitle;
 
 #pragma mark - UIViewController
 
@@ -26,6 +28,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    Settings*   settings = [Settings getInstance];
+    
+    // Initialisation du texte dans la langue paramétrée
+    [_viewTitle setText:NSLocalizedStringFromTable(@"MessagesViewTitle", settings.language, @"")];
     
     if ([(NSObject *)self.slidingViewController.delegate isKindOfClass:[MEDynamicTransition class]]) {
         MEDynamicTransition *dynamicTransition = (MEDynamicTransition *)self.slidingViewController.delegate;

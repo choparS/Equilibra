@@ -10,6 +10,7 @@
 #import "MEDynamicTransition.h"
 #import "UIViewController+ECSlidingViewController.h"
 #import "UserData.h"
+#import "Settings.h"
 
 @interface ProfileViewController ()
 
@@ -19,7 +20,9 @@
 
 @implementation ProfileViewController
 
+@synthesize viewTitle = _viewTitle;
 @synthesize profilePictureFB = _profilePictureFB;
+@synthesize profilePicture = _profilePicture;
 @synthesize username = _username;
 
 #pragma mark - UIViewController
@@ -36,13 +39,22 @@
         _profilePictureFB.opaque = TRUE;
         _username.text = [NSString stringWithFormat:@"%@ %@", data.firstName, data.lastName];
     }
-    else {
-        
+    else if (data.accountType == GOOGLE) {
+        [_profilePicture setImage:data.profilePicture.image];
+        _profilePicture.hidden = FALSE;
+        _profilePicture.opaque = TRUE;
+        _username.text = [NSString stringWithFormat:@"%@ %@", data.firstName, data.lastName];
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    
+    Settings*   settings = [Settings getInstance];
+    
+    // Initialisation du texte dans la langue paramétrée
+    [_viewTitle setText:NSLocalizedStringFromTable(@"ProfileViewTitle", settings.language, @"")];
     
     // Initialisation de la transition et du contrôle gestuel permettant d'ouvrir le menu en glissant le doigt de gauche à droite
     if ([(NSObject *)self.slidingViewController.delegate isKindOfClass:[MEDynamicTransition class]]) {

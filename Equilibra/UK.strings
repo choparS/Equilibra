@@ -78,7 +78,49 @@
 "AccountMyFavoritesButtonLabel" = "My favorites";
 "AccountLogoutButtonLabel" = "Logout";
 
+/* PROFILE */
 
+"ProfileViewTitle" = "My Profile";
+
+/* FOLLOWS */
+
+"FollowsViewTitle" = "My Follows";
+
+/* PLANNINGS */
+
+"PlanningsViewTitle" = "My Plannings";
+
+/* MESSAGES */
+
+"MessagesViewTitle" = "My Messages";
+
+/* FRIENDS */
+
+"FriendsViewTitle" = "My Friends";
+
+/* FAVORITES */
+
+"FavoritesViewTitle" = "My Favorites";
+
+/* ARTICLES */
+
+"ArticlesViewTitle" = "Articles";
+
+/* RECIPES */
+
+"RecipesViewTitle" = "Recipes";
+
+/* TOOLS */
+
+"ToolsViewTitle" = "Tools";
+
+/* FORUM */
+
+"ForumViewTitle" = "Forum";
+
+/* SETTINGS */
+
+"SettingsViewTitle" = "Settings";
 
 
 

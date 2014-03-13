@@ -29,7 +29,7 @@
 "MenuBMI" = "Calculer son IMC";
 "MenuBodyFat" = "Calculer son IMG";
 "MenuForum" = "Forum";
-"MenuSettings" = "Réglages";
+"MenuSettings" = "Paramètres";
 
 /* CONNECTION */
 
@@ -78,7 +78,49 @@
 "AccountMyFavoritesButtonLabel" = "Mes favoris";
 "AccountLogoutButtonLabel" = "Déconnexion";
 
+/* PROFILE */
 
+"ProfileViewTitle" = "Mon Profil";
+
+/* FOLLOWS */
+
+"FollowsViewTitle" = "Mes Suivis";
+
+/* PLANNINGS */
+
+"PlanningsViewTitle" = "Mes Plannings";
+
+/* MESSAGES */
+
+"MessagesViewTitle" = "Mes Messages";
+
+/* FRIENDS */
+
+"FriendsViewTitle" = "Mes Amis";
+
+/* FAVORITES */
+
+"FavoritesViewTitle" = "Mes Favoris";
+
+/* ARTICLES */
+
+"ArticlesViewTitle" = "Articles";
+
+/* RECIPES */
+
+"RecipesViewTitle" = "Recettes";
+
+/* TOOLS */
+
+"ToolsViewTitle" = "Outils";
+
+/* FORUM */
+
+"ForumViewTitle" = "Forum";
+
+/* SETTINGS */
+
+"SettingsViewTitle" = "Paramètres";
 
 
 

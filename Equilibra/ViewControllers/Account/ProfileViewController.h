@@ -11,8 +11,11 @@
 
 @interface ProfileViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet FBProfilePictureView *profilePictureFB;
-@property (strong, nonatomic) IBOutlet UILabel *username;
+@property (strong, nonatomic) IBOutlet UILabel*                 viewTitle;
+
+@property (strong, nonatomic) IBOutlet FBProfilePictureView*    profilePictureFB;
+@property (strong, nonatomic) IBOutlet UIImageView*             profilePicture;
+@property (strong, nonatomic) IBOutlet UILabel*                 username;
 
 - (IBAction)menuButtonTapped:(id)sender;
 

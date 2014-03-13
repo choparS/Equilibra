@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GooglePlus/GooglePlus.h"
 
-@interface ConnectionViewController : UIViewController
+@interface ConnectionViewController : UIViewController <GPPSignInDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *viewTitle;
 
@@ -25,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *facebookButton;
 @property (strong, nonatomic) IBOutlet UIButton *twitterButton;
 @property (strong, nonatomic) IBOutlet UIButton *googleButton;
+@property (strong, nonatomic) IBOutlet GPPSignInButton *googleSignInButton;
 @property (strong, nonatomic) IBOutlet UIButton *registerButton;
 @property (strong, nonatomic) IBOutlet UIButton *forgotPasswordButton;
 

@@ -13,8 +13,12 @@
 #import "FacebookSDK/FBError.h"
 #import "FacebookSDK/FBErrorUtility.h"
 #import "FacebookSDK/FBRequestConnection.h"
+#import "GooglePlus/GooglePlus.h"
+#import "GoogleOpenSource/GoogleOpenSource.h"
 
 @implementation AppDelegate
+
+static NSString* const kClientId = @"408377674197-a7o8ktrir9jac3m9mdfnhqmjoqoip08u.apps.googleusercontent.com";
 
 // Fonction appelée lorsque l'application a fini de se charger
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -23,12 +27,32 @@
         [FBSession openActiveSessionWithReadPermissions:@[@"basic_info", @"email", @"user_birthday"] allowLoginUI:NO
                                       completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {[self sessionStateChanged:session state:state error:error];}];
     }
+    // Si la session google est encore active, on s'authentifie et on met à jour les données utilisateurs
+    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+    signIn.shouldFetchGooglePlusUser = YES;
+    signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
+    
+    // You previously set kClientId in the "Initialize the Google+ client" step
+    signIn.clientID = kClientId;
+    
+    // Uncomment one of these two statements for the scope you chose in the previous step
+    signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
+    //signIn.scopes = @[ @"profile" ];            // "profile" scope
+    
+    if ([[GPPSignIn sharedInstance] trySilentAuthentication]) {
+        NSLog(@"Session Google opened");
+        UserData*   userData = [UserData getInstance];
+        
+        userData.connected = TRUE;
+        userData.accountType = GOOGLE;
+    }
     return YES;
 }
 
-// Fonction appelée lorsqu'on ouvre une URL dans l'application (comme le login facebook)
+// Fonction appelée lorsqu'on ouvre une URL dans l'application (comme le login facebook / google)
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    return ([FBAppCall handleOpenURL:url sourceApplication:sourceApplication] ||
+            [GPPURLHandler handleURL:url sourceApplication:sourceApplication annotation:annotation]);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

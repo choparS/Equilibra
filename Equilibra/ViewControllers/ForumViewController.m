@@ -9,6 +9,7 @@
 #import "ForumViewController.h"
 #import "MEDynamicTransition.h"
 #import "UIViewController+ECSlidingViewController.h"
+#import "Settings.h"
 
 @interface ForumViewController ()
 
@@ -18,6 +19,8 @@
 
 @implementation ForumViewController
 
+@synthesize viewTitle = _viewTitle;
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -26,6 +29,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    Settings*   settings = [Settings getInstance];
+    
+    // Initialisation du texte dans la langue paramétrée
+    [_viewTitle setText:NSLocalizedStringFromTable(@"ForumViewTitle", settings.language, @"")];
     
     // Initialisation de la transition et du contrôle gestuel permettant d'ouvrir le menu en glissant le doigt de gauche à droite
     if ([(NSObject *)self.slidingViewController.delegate isKindOfClass:[MEDynamicTransition class]]) {

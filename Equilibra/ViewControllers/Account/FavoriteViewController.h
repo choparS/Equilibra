@@ -10,6 +10,8 @@
 
 @interface FavoriteViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *viewTitle;
+
 - (IBAction)menuButtonTapped:(id)sender;
 
 @end

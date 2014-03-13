@@ -9,6 +9,8 @@
 #import "ConnectionViewController.h"
 #import "MEDynamicTransition.h"
 #import "UIViewController+ECSlidingViewController.h"
+#import "GoogleOpenSource/GoogleOpenSource.h"
+#import "GoogleOpenSource/GTLServicePlus.h"
 #import "AppDelegate.h"
 #import "WebServices.h"
 #import "Dialog.h"
@@ -34,6 +36,7 @@
 @synthesize facebookButton = _facebookButton;
 @synthesize twitterButton = _twitterButton;
 @synthesize googleButton = _googleButton;
+@synthesize googleSignInButton = _googleSignInButton;
 @synthesize registerButton = _registerButton;
 @synthesize forgotPasswordButton = _forgotPasswordButton;
 
@@ -41,6 +44,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+
+    signIn.delegate = self;
+    [_googleSignInButton setImage:nil forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -74,6 +82,59 @@
     else {
         [self.navigationController.view removeGestureRecognizer:self.dynamicTransitionPanGesture];
         [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    }
+}
+
+- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
+                   error: (NSError *) error
+{
+    if (error)
+        NSLog(@"Received error %@ and auth object %@",error, auth);
+    else {
+        NSLog(@"Session Google opened");
+        UserData*       userData = [UserData getInstance];
+        GTLServicePlus* plusService = [[GTLServicePlus alloc] init];
+        
+        plusService.retryEnabled = YES;
+        [plusService setAuthorizer:[GPPSignIn sharedInstance].authentication];
+        
+        GTLQueryPlus *query = [GTLQueryPlus queryForPeopleGetWithUserId:@"me"];
+        
+        [plusService executeQuery:query
+                completionHandler:^(GTLServiceTicket *ticket,
+                                    GTLPlusPerson *person,
+                                    NSError *error) {
+                    if (error) {
+                        GTMLoggerError(@"Error: %@", error);
+                    }
+                    else {
+                        NSString *description = [NSString stringWithFormat:@"%@", person.displayName];
+                        NSLog(@"%@", description);
+                        
+                        userData.firstName = person.name.givenName;
+                        userData.lastName = person.name.familyName;
+                        
+                        NSData *avatarData = nil;
+                        NSString *imageURLString = person.image.url;
+                        NSLog(@"%@", imageURLString);
+                        if (imageURLString) {
+                            NSURL *imageURL = [NSURL URLWithString:imageURLString];
+                            avatarData = [NSData dataWithContentsOfURL:imageURL];
+                        }
+                        
+                        if (avatarData) {
+                            NSLog(@"Data not nil");
+                            userData.profilePicture = [[UIImageView alloc] initWithImage:[UIImage imageWithData:avatarData]];
+                        }
+                        
+                    }
+                }];
+        
+        userData.connected = TRUE;
+        userData.accountType = GOOGLE;
+        
+        // Puis on redirige l'utilisateur sur la page d'accueil
+        [self performSegueWithIdentifier:@"toHome" sender:self];
     }
 }
 
@@ -145,7 +206,7 @@
 }
 
 - (IBAction)googleButtonTapped:(id)sender {
-    
+
 }
 
 @end
