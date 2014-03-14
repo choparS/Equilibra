@@ -30,6 +30,9 @@
 "MenuBodyFat" = "Body Fat Calculator";
 "MenuForum" = "Forum";
 "MenuSettings" = "Settings";
+"MenuUnitTest" = "Test UK";
+"MenuTestConnexion" = "Test connexion UK";
+"MenuTestInscription" = "Test inscription UK";
 
 /* CONNECTION */
 
@@ -122,6 +125,8 @@
 
 "SettingsViewTitle" = "Settings";
 
+/* TEST */
+"UnitTestViewTitle" = "Test UK";
 
 
 

@@ -97,11 +97,16 @@
                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuBMI", settings.language, @"") :@"menuBMIIcon" :@"png" :4 :nil],
                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuBodyFat", settings.language, @"") :@"menuBodyFatIcon" :@"png" :4 :nil], nil]]];
     [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuForum", settings.language, @"") :@"menuForumIcon" :@"png" :-1
-                                                   :[[NSMutableArray alloc] initWithObjects:
-                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuNutrition", settings.language, @"") :@"menuNutritionIcon" :@"png" :5 :nil],
-                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"menuSportIcon" :@"png" :5 :nil],
-                                                     [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"menuWeightIcon" :@"png" :5 :nil], nil]]];
+                                                    :[[NSMutableArray alloc] initWithObjects:
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuNutrition", settings.language, @"") :@"menuNutritionIcon" :@"png" :5 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"menuSportIcon" :@"png" :5 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"menuWeightIcon" :@"png" :5 :nil], nil]]];
     [_menuItemsMember addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuSettings", settings.language, @"") :@"menuSettingsIcon" :@"png" :-1 :nil]];
+    // menu TEST
+    [_menuItemsMember addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuUnitTest", settings.language, @"") :@"menuForumIcon" :@"png" :-1
+                                                    :[[NSMutableArray alloc] initWithObjects:
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuTestConnexion", settings.language, @"") :@"menuNutritionIcon" :@"png" :7 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuTestInscription", settings.language, @"") :@"menuSportIcon" :@"png" :7 :nil], nil]]];
     return _menuItemsMember;
 }
 
@@ -134,6 +139,12 @@
                                                       [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuSport", settings.language, @"") :@"menuSportIcon" :@"png" :5 :nil],
                                                       [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuWeight", settings.language, @"") :@"menuWeightIcon" :@"png" :5 :nil], nil]]];
     [_menuItemsGuest addObject:[MenuItem initialize:MENU :NSLocalizedStringFromTable(@"MenuSettings", settings.language, @"") :@"menuSettingsIcon" :@"png" :-1 :nil]];
+    // menu TEST
+    [_menuItemsGuest addObject:[MenuItem initialize:GROUP_MENU :NSLocalizedStringFromTable(@"MenuUnitTest", settings.language, @"") :@"menuForumIcon" :@"png" :-1
+                                                    :[[NSMutableArray alloc] initWithObjects:
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuTestConnexion", settings.language, @"") :@"menuNutritionIcon" :@"png" :7 :nil],
+                                                      [MenuItem initialize:SUBMENU :NSLocalizedStringFromTable(@"MenuTestInscription", settings.language, @"") :@"menuSportIcon" :@"png" :7 :nil], nil]]];
+
     return _menuItemsGuest;
 }
 
@@ -327,6 +338,8 @@
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ForumNavigation"];
         else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuSettings", settings.language, @"")])
             self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsNavigation"];
+        else if ([menu.title isEqualToString:NSLocalizedStringFromTable(@"MenuUnitTest", settings.language, @"")])
+            self.slidingViewController.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"UnitTestNavigation"];
         
         [self.slidingViewController resetTopViewAnimated:YES];
     }

@@ -30,6 +30,9 @@
 "MenuBodyFat" = "Calculer son IMG";
 "MenuForum" = "Forum";
 "MenuSettings" = "Paramètres";
+"MenuUnitTest" = "Test FR";
+"MenuTestConnexion" = "Test connexion FR";
+"MenuTestInscription" = "Test inscription FR";
 
 /* CONNECTION */
 
@@ -122,7 +125,8 @@
 
 "SettingsViewTitle" = "Paramètres";
 
-
+/* TEST */
+"UnitTestViewTitle" = "Test FR";
 
 
 

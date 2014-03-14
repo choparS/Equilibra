@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70352D2118D3431000F95FB3 /* UnitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70352D2018D3431000F95FB3 /* UnitTestViewController.m */; };
+		70EFE92718D1ECA7002651CC /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EFE92618D1ECA7002651CC /* GoogleOpenSource.framework */; };
+		70EFE92918D1ECAE002651CC /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EFE92818D1ECAE002651CC /* GooglePlus.framework */; };
+		70EFE92B18D1ECD6002651CC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EFE92A18D1ECD6002651CC /* FacebookSDK.framework */; };
 		D508311418C0F91B0063C111 /* UK.strings in Resources */ = {isa = PBXBuildFile; fileRef = D508311318C0F91B0063C111 /* UK.strings */; };
-		D508319518C11EB20063C111 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D508319418C11EB20063C111 /* FacebookSDK.framework */; };
 		D508324B18C1211C0063C111 /* accountLogoutButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D508321518C1211C0063C111 /* accountLogoutButton.png */; };
 		D508324C18C1211C0063C111 /* accountMyFavoritesButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D508321618C1211C0063C111 /* accountMyFavoritesButton.png */; };
 		D508324D18C1211C0063C111 /* accountMyFollowsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D508321718C1211C0063C111 /* accountMyFollowsButton.png */; };
@@ -67,8 +70,6 @@
 		D50EAAA018C4D370005B4CDA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50EAA9F18C4D370005B4CDA /* MediaPlayer.framework */; };
 		D50EAAA218C4D379005B4CDA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50EAAA118C4D379005B4CDA /* Security.framework */; };
 		D50EAAA418C4D380005B4CDA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50EAAA318C4D380005B4CDA /* SystemConfiguration.framework */; };
-		D50EAAA618C4D3A8005B4CDA /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50EAAA518C4D3A8005B4CDA /* GoogleOpenSource.framework */; };
-		D50EAAA818C4D3B4005B4CDA /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50EAAA718C4D3B4005B4CDA /* GooglePlus.framework */; };
 		D50EAAAA18C4D48E005B4CDA /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D50EAAA918C4D48E005B4CDA /* GooglePlus.bundle */; };
 		D51697DE18BD645E00356C79 /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51697DD18BD645E00356C79 /* ArticleViewController.m */; };
 		D51697E118BD64D600356C79 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D51697E018BD64D600356C79 /* RecipeViewController.m */; };
@@ -140,8 +141,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70352D1F18D3431000F95FB3 /* UnitTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitTestViewController.h; sourceTree = "<group>"; };
+		70352D2018D3431000F95FB3 /* UnitTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitTestViewController.m; sourceTree = "<group>"; };
+		70EFE92618D1ECA7002651CC /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = ../../../../GoogleSDK/GoogleOpenSource.framework; sourceTree = "<group>"; };
+		70EFE92818D1ECAE002651CC /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = ../../../../GoogleSDK/GooglePlus.framework; sourceTree = "<group>"; };
+		70EFE92A18D1ECD6002651CC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		D508311318C0F91B0063C111 /* UK.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = UK.strings; sourceTree = "<group>"; };
-		D508319418C11EB20063C111 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		D508321518C1211C0063C111 /* accountLogoutButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accountLogoutButton.png; sourceTree = "<group>"; };
 		D508321618C1211C0063C111 /* accountMyFavoritesButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accountMyFavoritesButton.png; sourceTree = "<group>"; };
 		D508321718C1211C0063C111 /* accountMyFollowsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accountMyFollowsButton.png; sourceTree = "<group>"; };
@@ -200,8 +205,6 @@
 		D50EAA9F18C4D370005B4CDA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D50EAAA118C4D379005B4CDA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D50EAAA318C4D380005B4CDA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D50EAAA518C4D3A8005B4CDA /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = ../../../../Documents/GoogleSDK/GoogleOpenSource.framework; sourceTree = "<group>"; };
-		D50EAAA718C4D3B4005B4CDA /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = ../../../../Documents/GoogleSDK/GooglePlus.framework; sourceTree = "<group>"; };
 		D50EAAA918C4D48E005B4CDA /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
 		D51697DC18BD645E00356C79 /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
 		D51697DD18BD645E00356C79 /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
@@ -314,20 +317,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70EFE92918D1ECAE002651CC /* GooglePlus.framework in Frameworks */,
 				D50EAAA418C4D380005B4CDA /* SystemConfiguration.framework in Frameworks */,
 				D50EAAA218C4D379005B4CDA /* Security.framework in Frameworks */,
-				D50EAAA618C4D3A8005B4CDA /* GoogleOpenSource.framework in Frameworks */,
 				D50EAAA018C4D370005B4CDA /* MediaPlayer.framework in Frameworks */,
 				D50EAA9E18C4D35E005B4CDA /* CoreText.framework in Frameworks */,
 				D50EAA9C18C4D34E005B4CDA /* CoreMotion.framework in Frameworks */,
+				70EFE92718D1ECA7002651CC /* GoogleOpenSource.framework in Frameworks */,
 				D50EAA9A18C4D345005B4CDA /* CoreLocation.framework in Frameworks */,
 				D50EAA9818C4D332005B4CDA /* AssetsLibrary.framework in Frameworks */,
 				D50EAA9618C4D32A005B4CDA /* AddressBook.framework in Frameworks */,
-				D50EAAA818C4D3B4005B4CDA /* GooglePlus.framework in Frameworks */,
 				D5C3DBDE18B286DA00856ECD /* CoreGraphics.framework in Frameworks */,
-				D508319518C11EB20063C111 /* FacebookSDK.framework in Frameworks */,
 				D5C3DBE018B286DA00856ECD /* UIKit.framework in Frameworks */,
 				D5C3DBDC18B286DA00856ECD /* Foundation.framework in Frameworks */,
+				70EFE92B18D1ECD6002651CC /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,8 +509,9 @@
 		D5C3DBDA18B286DA00856ECD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D50EAAA718C4D3B4005B4CDA /* GooglePlus.framework */,
-				D50EAAA518C4D3A8005B4CDA /* GoogleOpenSource.framework */,
+				70EFE92A18D1ECD6002651CC /* FacebookSDK.framework */,
+				70EFE92818D1ECAE002651CC /* GooglePlus.framework */,
+				70EFE92618D1ECA7002651CC /* GoogleOpenSource.framework */,
 				D50EAAA318C4D380005B4CDA /* SystemConfiguration.framework */,
 				D50EAAA118C4D379005B4CDA /* Security.framework */,
 				D50EAA9F18C4D370005B4CDA /* MediaPlayer.framework */,
@@ -516,7 +520,6 @@
 				D50EAA9918C4D345005B4CDA /* CoreLocation.framework */,
 				D50EAA9718C4D332005B4CDA /* AssetsLibrary.framework */,
 				D50EAA9518C4D32A005B4CDA /* AddressBook.framework */,
-				D508319418C11EB20063C111 /* FacebookSDK.framework */,
 				D5C3DBDB18B286DA00856ECD /* Foundation.framework */,
 				D5C3DBDD18B286DA00856ECD /* CoreGraphics.framework */,
 				D5C3DBDF18B286DA00856ECD /* UIKit.framework */,
@@ -650,6 +653,8 @@
 				D51697E318BD653A00356C79 /* ToolsViewController.m */,
 				D51697E518BD656D00356C79 /* ForumViewController.h */,
 				D51697E618BD656D00356C79 /* ForumViewController.m */,
+				70352D1F18D3431000F95FB3 /* UnitTestViewController.h */,
+				70352D2018D3431000F95FB3 /* UnitTestViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -849,6 +854,7 @@
 				D5F9D93318BA56520014D6A7 /* WebServices.m in Sources */,
 				D51697E118BD64D600356C79 /* RecipeViewController.m in Sources */,
 				D555906418BFB87600893EEF /* FlagCell.m in Sources */,
+				70352D2118D3431000F95FB3 /* UnitTestViewController.m in Sources */,
 				D519DE2718BD1A28005C47BE /* ProfileViewController.m in Sources */,
 				D5F9D94D18BA56600014D6A7 /* InitialViewController.m in Sources */,
 				D51697E418BD653A00356C79 /* ToolsViewController.m in Sources */,
@@ -1005,6 +1011,8 @@
 					"$(inherited)",
 					/Documents/FacebookSDK,
 					/Documents/GoogleSDK,
+					/Users/bricelebail/Documents/FacebookSDK,
+					/Users/bricelebail/Documents/GoogleSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Equilibra/Equilibra-Prefix.pch";
@@ -1024,6 +1032,8 @@
 					"$(inherited)",
 					/Documents/FacebookSDK,
 					/Documents/GoogleSDK,
+					/Users/bricelebail/Documents/FacebookSDK,
+					/Users/bricelebail/Documents/GoogleSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Equilibra/Equilibra-Prefix.pch";
