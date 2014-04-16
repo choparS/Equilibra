@@ -10,8 +10,19 @@
 
 @interface UnitTestViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *viewTitle;
+//Menu
+@property (weak, nonatomic) IBOutlet UILabel    *viewTitle;
 
 - (IBAction)menuButtonTapped:(id)sender;
+
+
+//Test
+@property (strong, nonatomic) IBOutlet UILabel  *testConnexionLabelResult;
+@property (strong, nonatomic) IBOutlet UILabel  *testServerConnexionLabelResult;
+@property (strong, nonatomic) IBOutlet UILabel  *testInscriptionLabelResult;
+@property (strong, nonatomic) IBOutlet UILabel  *testInscriptionEmailErrorConnexionLabelResult;
+@property (strong, nonatomic) IBOutlet UILabel  *testInscriptionUsernameErrorLabelResult;
+
+- (IBAction)testConnexionTapped:(id)sender;
 
 @end

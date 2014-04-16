@@ -11,6 +11,7 @@
 #import "MEDynamicTransition.h"
 #import "UIViewController+ECSlidingViewController.h"
 #import "Settings.h"
+#import "UnitTest.h"
 
 @interface UnitTestViewController ()
 
@@ -53,4 +54,64 @@
     [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }
 
+- (IBAction)testConnexionTapped:(id)sender {
+    
+    UnitTest    *test= [[UnitTest alloc] init];
+
+    [test testConnexion];
+    NSLog(@"%@", [test valueForKey:@"unitTestResult"]);
+    // Test si la WSconnexion est True
+    if ([[[test valueForKey:@"unitTestResult"] valueForKey:@"WSConnexion"] boolValue] == true) {
+        
+        self.testServerConnexionLabelResult.text = @"Ok";
+        self.testServerConnexionLabelResult.textColor = [UIColor greenColor];
+    } else {
+        
+        self.testServerConnexionLabelResult.text = @"Ko";
+        self.testServerConnexionLabelResult.textColor = [UIColor redColor];
+    }
+
+    // Test si Register est True
+    if ([[[test valueForKey:@"unitTestResult"] valueForKey:@"Inscription"] boolValue] == true) {
+        
+        self.testInscriptionLabelResult.text = @"Ok";
+        self.testInscriptionLabelResult.textColor = [UIColor greenColor];
+    } else {
+        
+        self.testInscriptionLabelResult.text = @"Ko";
+        self.testInscriptionLabelResult.textColor = [UIColor redColor];
+    }
+    // Test si Register EmailError est True
+    if ([[[test valueForKey:@"unitTestResult"] valueForKey:@"InscriptionEmailError"] boolValue] == true) {
+        
+        self.testInscriptionEmailErrorConnexionLabelResult.text = @"Ok";
+        self.testInscriptionEmailErrorConnexionLabelResult.textColor = [UIColor greenColor];
+    } else {
+        
+        self.testInscriptionEmailErrorConnexionLabelResult.text = @"Ko";
+        self.testInscriptionEmailErrorConnexionLabelResult.textColor = [UIColor redColor];
+    }
+
+    // Test si Register UsernameError est True
+    if ([[[test valueForKey:@"unitTestResult"] valueForKey:@"InscriptionUsernameError"] boolValue] == true) {
+        
+        self.testInscriptionUsernameErrorLabelResult.text = @"Ok";
+        self.testInscriptionUsernameErrorLabelResult.textColor = [UIColor greenColor];
+    } else {
+        
+        self.testInscriptionUsernameErrorLabelResult.text = @"Ko";
+        self.testInscriptionUsernameErrorLabelResult.textColor = [UIColor redColor];
+    }
+    // Test si Connexion est True
+    if ([[[test valueForKey:@"unitTestResult"] valueForKey:@"Connexion"] boolValue] == true) {
+        
+        self.testConnexionLabelResult.text = @"Ok";
+        self.testConnexionLabelResult.textColor = [UIColor greenColor];
+    } else {
+        
+        self.testConnexionLabelResult.text = @"Ko";
+        self.testConnexionLabelResult.textColor = [UIColor redColor];
+    }
+
+}
 @end

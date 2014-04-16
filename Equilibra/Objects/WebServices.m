@@ -28,8 +28,19 @@
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/register-verification", @"equilibra2015", @"equilibrawebsite2015"]];
     // Execute la requete http et retourne les données JSON
     NSDictionary *answer = [self httpRequest:post withUrl:url];
-
+    
     return [answer[@"verification"] boolValue];
+}
+
+- (BOOL)WBSDeleteUser:(NSString *)username withPassWord:(NSString *)password {
+    // Creation de la requete a envoyer au serveur
+    NSString *post = [NSString stringWithFormat:@"username_email=%@&password=%@", username, password];
+    // Formatage de l'url de destination de la requete
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/delete-user", @"equilibra2015", @"equilibrawebsite2015"]];
+    // Execute la requete http et retourne les données JSON
+    NSDictionary *answer = [self httpRequest:post withUrl:url];
+    
+    return [answer[@"DeleteUser"] boolValue];
 }
 
 - (NSDictionary*)WBSRegister:(NSDictionary *)data {

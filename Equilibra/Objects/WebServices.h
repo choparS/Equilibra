@@ -43,6 +43,17 @@
 - (NSDictionary*)WBSRegister:(NSDictionary*)data;
 
 /*
+ Fonction qui permet de supprimer un utilisateur
+ 
+ Parametres:
+ - username : l'username (pseudo ou email) fourni par l'utilisateur
+ - password : le mot de passe fourni par l'utilisateur
+ Retour:
+ True en cas de succès, sinon False
+*/
+- (BOOL)WBSDeleteUser:(NSString *)username withPassWord:(NSString *)password;
+
+/*
  Fonction qui permet de lancer une requête HTTP
  
  Parametres:

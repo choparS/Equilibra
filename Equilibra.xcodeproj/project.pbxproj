@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		70352D2118D3431000F95FB3 /* UnitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70352D2018D3431000F95FB3 /* UnitTestViewController.m */; };
+		70C07BBD18ED6DB40038D89A /* UnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C07BBC18ED6DB40038D89A /* UnitTest.m */; };
 		70EFE92718D1ECA7002651CC /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EFE92618D1ECA7002651CC /* GoogleOpenSource.framework */; };
 		70EFE92918D1ECAE002651CC /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EFE92818D1ECAE002651CC /* GooglePlus.framework */; };
 		70EFE92B18D1ECD6002651CC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EFE92A18D1ECD6002651CC /* FacebookSDK.framework */; };
@@ -143,6 +144,8 @@
 /* Begin PBXFileReference section */
 		70352D1F18D3431000F95FB3 /* UnitTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitTestViewController.h; sourceTree = "<group>"; };
 		70352D2018D3431000F95FB3 /* UnitTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitTestViewController.m; sourceTree = "<group>"; };
+		70C07BBB18ED6DB40038D89A /* UnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitTest.h; sourceTree = "<group>"; };
+		70C07BBC18ED6DB40038D89A /* UnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitTest.m; sourceTree = "<group>"; };
 		70EFE92618D1ECA7002651CC /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = ../../../../GoogleSDK/GoogleOpenSource.framework; sourceTree = "<group>"; };
 		70EFE92818D1ECAE002651CC /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = ../../../../GoogleSDK/GooglePlus.framework; sourceTree = "<group>"; };
 		70EFE92A18D1ECD6002651CC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -626,6 +629,8 @@
 				D5F9D92C18BA56520014D6A7 /* UserData.m */,
 				D5F9D92D18BA56520014D6A7 /* WebServices.h */,
 				D5F9D92E18BA56520014D6A7 /* WebServices.m */,
+				70C07BBB18ED6DB40038D89A /* UnitTest.h */,
+				70C07BBC18ED6DB40038D89A /* UnitTest.m */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -845,6 +850,7 @@
 				D5F9D95218BA56600014D6A7 /* RegisterViewController.m in Sources */,
 				D519DE3518BD1A46005C47BE /* MenuCell.m in Sources */,
 				D51697DE18BD645E00356C79 /* ArticleViewController.m in Sources */,
+				70C07BBD18ED6DB40038D89A /* UnitTest.m in Sources */,
 				D5F9D94E18BA56600014D6A7 /* MenuViewController.m in Sources */,
 				D5F9D95118BA56600014D6A7 /* RegisterTwoViewController.m in Sources */,
 				D5C3DC2618B2889E00856ECD /* ECSlidingInteractiveTransition.m in Sources */,
