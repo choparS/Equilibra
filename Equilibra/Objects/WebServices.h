@@ -53,6 +53,18 @@
 */
 - (BOOL)WBSDeleteUser:(NSString *)username withPassWord:(NSString *)password;
 
+- (BOOL)WBSFollowSportAdd:(NSDate *)date :(NSString*)value :(NSString*)type;
+
+- (BOOL)WBSFollowWeightAdd:(NSDate *)date :(NSString*)value :(NSString*)type;
+
+- (BOOL)WBSFollowMeasurementAdd:(NSDate *)date :(NSString*)value :(NSString*)type;
+
+- (NSDictionary*)WBSRecipe:(NSInteger)limit;
+- (NSDictionary*)WBSRecipeConsult:(NSInteger)identifier;
+
+- (NSDictionary*)WBSArticle:(NSInteger)limit;
+- (NSDictionary*)WBSArticleConsult:(NSInteger)identifier;
+
 /*
  Fonction qui permet de lancer une requête HTTP
  

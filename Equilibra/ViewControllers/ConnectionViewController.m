@@ -16,6 +16,7 @@
 #import "Dialog.h"
 #import "UserData.h"
 #import "Settings.h"
+#import "CheckValue.h"
 
 @interface ConnectionViewController ()
 
@@ -145,14 +146,6 @@
     return YES;
 }
 
-- (BOOL)checkUsername :(NSString*)username {
-    return TRUE;
-}
-
-- (BOOL)checkPassword :(NSString*)password {
-    return TRUE;
-}
-
 #pragma mark - IBActions
 
 - (IBAction)menuButtonTapped:(id)sender {
@@ -160,8 +153,13 @@
 }
 
 - (IBAction)connectButtonTapped:(id)sender {
+    
+    CheckValue      *checker = [[CheckValue alloc] init];
+    
+    [checker checkUsername:_usernameInput.text];
+    
     // Si l'username et le password est valide
-    if ([self checkUsername:_usernameInput.text.lowercaseString] && [self checkPassword:_passwordInput.text.lowercaseString]) {
+    if ([checker checkUsername:_usernameInput.text] && [checker checkPassword:_passwordInput.text.lowercaseString]) {
         // On lance le webservice de connexion et on récupère la réponse du serveur
         WebServices *wbs = [[WebServices alloc] init];
         BOOL connected = [wbs WBSConnection:_usernameInput.text.lowercaseString withPassWord:_passwordInput.text];
@@ -182,6 +180,9 @@
         // Si la connexion a échouée, on affiche un dialogue
         else
             [Dialog informDialog:@"Connection" :@"Bad credentials..." :nil];
+    } else {
+
+        [Dialog informDialog:@"Error" :[checker createMsgError:@[@"username"]]:nil];
     }
 }
 

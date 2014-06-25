@@ -10,6 +10,11 @@
 
 @implementation WebServices
 
+
+/*
+ * WebService Utilisateur
+ */
+
 - (BOOL)WBSConnection:(NSString *)username withPassWord:(NSString *)password {
     // Creation de la requete a envoyer au serveur
     NSString *post = [NSString stringWithFormat:@"username_email=%@&password=%@", username, password];
@@ -19,6 +24,28 @@
     NSDictionary *answer = [self httpRequest:post withUrl:url];
     
     return [answer[@"connexion"] boolValue];
+}
+
+- (NSDictionary*)WBSRegister:(NSDictionary *)data {
+    // Creation de la requete a envoye au serveur
+    NSString *post = [NSString stringWithFormat:@"username=%@&email=%@&password=%@&firstname=%@&lastname=%@&dateOfBirth=%@&gender=%@&postalCode=%@&newsletter=%@",
+                      data[@"pseudo"],
+                      data[@"email"],
+                      data[@"password"],
+                      data[@"firstName"],
+                      data[@"lastName"],
+                      data[@"dateOfBirth"],
+                      data[@"gender"],
+                      data[@"zipCode"],
+                      data[@"newsletter"]];
+    
+    // Formatage de l'url de destination de la requete
+    NSURL   *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/register", @"equilibra2015", @"equilibrawebsite2015"]];
+    
+    // Execute la requete http et retourne les données JSON
+    NSDictionary *answer = [self httpRequest:post withUrl:url];
+    
+    return answer;
 }
 
 - (BOOL)WBSRegisterVerification:(NSString *)type :(NSString*)data {
@@ -42,28 +69,128 @@
     
     return [answer[@"DeleteUser"] boolValue];
 }
+/******************************************************************************/
 
-- (NSDictionary*)WBSRegister:(NSDictionary *)data {
+/*
+ * WebService Follow
+ */
+
+// Peut etre regrouper toutes les fonctions follow dans la meme fonction
+- (BOOL)WBSFollowSportAdd:(NSDate *)date :(NSString*)value :(NSString*)type
+{
     // Creation de la requete a envoye au serveur
-    NSString *post = [NSString stringWithFormat:@"username=%@&email=%@&password=%@&firstname=%@&lastname=%@&dateOfBirth=%@&gender=%@&postalCode=%@&newsletter=%@",
-                      data[@"pseudo"],
-                      data[@"email"],
-                      data[@"password"],
-                      data[@"firstName"],
-                      data[@"lastName"],
-                      data[@"dateOfBirth"],
-                      data[@"gender"],
-                      data[@"zipCode"],
-                      data[@"newsletter"]];
-
+    NSString *post = [NSString stringWithFormat:@"date=%@&value=%@&type=%@",
+                      date,
+                      value,
+                      type];
+    
     // Formatage de l'url de destination de la requete
-    NSURL   *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/register", @"equilibra2015", @"equilibrawebsite2015"]];
+    NSURL   *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/JENESAISPAS", @"equilibra2015", @"equilibrawebsite2015"]];
     
     // Execute la requete http et retourne les données JSON
     NSDictionary *answer = [self httpRequest:post withUrl:url];
     
+    return [answer[@"error"] boolValue];
+}
+
+- (BOOL)WBSFollowWeightAdd:(NSDate *)date :(NSString*)value :(NSString*)type
+{
+    // Creation de la requete a envoye au serveur
+    NSString *post = [NSString stringWithFormat:@"date=%@&value=%@&type=%@",
+                      date,
+                      value,
+                      type];
+    
+    // Formatage de l'url de destination de la requete
+    NSURL   *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/JENESAISPAS", @"equilibra2015", @"equilibrawebsite2015"]];
+    
+    // Execute la requete http et retourne les données JSON
+    NSDictionary *answer = [self httpRequest:post withUrl:url];
+    
+    return [answer[@"error"] boolValue];
+}
+
+- (BOOL)WBSFollowMeasurementAdd:(NSDate *)date :(NSString*)value :(NSString*)type
+{
+    // Creation de la requete a envoye au serveur
+    NSString *post = [NSString stringWithFormat:@"date=%@&value=%@&type=%@",
+                      date,
+                      value,
+                      type];
+    
+    // Formatage de l'url de destination de la requete
+    NSURL   *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/JENESAISPAS", @"equilibra2015", @"equilibrawebsite2015"]];
+    
+    // Execute la requete http et retourne les données JSON
+    NSDictionary *answer = [self httpRequest:post withUrl:url];
+    
+    return [answer[@"error"] boolValue];
+}
+/******************************************************************************/
+
+/*
+ * WebService Recette
+ */
+- (NSDictionary*)WBSRecipe:(NSInteger)limit {
+    
+    // Creation de la requete a envoye au serveur
+//    NSString *post = [NSString stringWithFormat:@"limit=%d",
+//                      limit];
+    // Formatage de l'url de destination de la requete
+    NSURL   *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/get-recipes", @"equilibra2015", @"equilibrawebsite2015"]];
+    
+    NSDictionary *answer = [self httpRequest:nil withUrl:url];
+
+    return answer[@"recipes"];
+}
+
+- (NSDictionary*)WBSRecipeConsult:(NSInteger)identifier {
+    
+    // Creation de la requete a envoye au serveur
+    NSString *post = [NSString stringWithFormat:@"id=%d",
+                          identifier];
+    // Formatage de l'url de destination de la requete
+    NSURL   *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/consult-recipe", @"equilibra2015", @"equilibrawebsite2015"]];
+    
+    NSDictionary *answer = [self httpRequest:post withUrl:url];
+    
+    return answer[@"recipe"];
+}
+/******************************************************************************/
+
+/*
+ * WebService Article
+ */
+
+- (NSDictionary*)WBSArticle:(NSInteger)limit {
+    
+    // Creation de la requete a envoye au serveur
+    //    NSString *post = [NSString stringWithFormat:@"limit=%d",
+    //                      limit];
+    // Formatage de l'url de destination de la requete
+    NSURL   *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/get-articles", @"equilibra2015", @"equilibrawebsite2015"]];
+    
+    NSDictionary *answer = [self httpRequest:nil withUrl:url];
+    
+    NSLog(@"%@", answer);
+    return answer[@"articles"];
+}
+
+- (NSDictionary*)WBSArticleConsult:(NSInteger)identifier {
+    
+    // Creation de la requete a envoye au serveur
+    NSString *post = [NSString stringWithFormat:@"id=%d",
+                      identifier];
+    // Formatage de l'url de destination de la requete
+    NSURL   *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@:%@@www.equi-libra.fr/ws/consult-article", @"equilibra2015", @"equilibrawebsite2015"]];
+    
+    NSDictionary *answer = [self httpRequest:post withUrl:url];
+    
     return answer;
 }
+
+
+/******************************************************************************/
 
 - (NSDictionary*)httpRequest:(NSString*)request withUrl:(NSURL*)url {
     //Préparation de la requete

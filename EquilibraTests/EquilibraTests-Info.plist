@@ -18,5 +18,32 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Facebook</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1378063462446557</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Equilibra.Equilibra</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>Equilibra.Equilibra</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>1378063462446557</string>
+	<key>FacebookDisplayName</key>
+	<string>Equilibra</string>
 </dict>
 </plist>

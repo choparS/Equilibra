@@ -73,7 +73,11 @@
 }
 
 - (IBAction)LogoutButtonTapped:(id)sender {
-    if ([UserData getInstance].accountType == FACEBOOK) {
+    if ([UserData getInstance].accountType == EQUILIBRA) {
+        
+        UserData*   userData = [UserData getInstance];
+        userData.connected = FALSE;
+    } else if ([UserData getInstance].accountType == FACEBOOK) {
         if (FBSession.activeSession.state == FBSessionStateOpen || FBSession.activeSession.state == FBSessionStateOpenTokenExtended)
             [FBSession.activeSession closeAndClearTokenInformation];
         else {
